@@ -25,11 +25,30 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
+const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <path d="M21 5.98a8.5 8.5 0 0 1-2.36 5.23l-3.23 3.23a1.22 1.22 0 0 1-1.73 0l-1.42-1.42a1.22 1.22 0 0 1 0-1.73l3.23-3.23a8.5 8.5 0 0 1 5.5-2.22Z" />
+    </svg>
+  );
+
 const socialLinks = [
     { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin },
     { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter },
     { name: 'GitHub', href: 'https://github.com/hakinz0110', icon: Github },
+    { name: 'WhatsApp', href: 'https://wa.me/2349138477491', icon: WhatsappIcon },
 ];
 
 function SubmitButton() {
