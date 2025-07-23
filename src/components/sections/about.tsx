@@ -58,7 +58,7 @@ export function About() {
                 </div>
             </div>
             <div className="order-1 md:order-2">
-                <Card className="overflow-hidden shadow-lg border-2 border-primary/20 transition-transform duration-300 hover:scale-105 hover:shadow-primary/20 p-4">
+                <Card className="overflow-hidden shadow-lg border-2 border-primary/20 p-4 animate-float">
                 <Image
                     src="https://luonahsbhiopdibgxutp.supabase.co/storage/v1/object/public/portfolio-images//Akinola%20Abere.png"
                     alt="Hakinz_Tech"
