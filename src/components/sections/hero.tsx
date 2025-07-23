@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +12,8 @@ import {
     CarouselContent,
     CarouselItem,
   } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
 
 const socialLinks = [
   { href: 'https://github.com/hakinz0110', icon: Github },
@@ -37,6 +41,10 @@ const profileImages = [
 ]
 
 export function Hero() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  )
+
   return (
     <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-background text-foreground py-20 md:pt-32 animate-glow">
        <div className="absolute inset-0 z-0" style={{
@@ -84,10 +92,13 @@ export function Hero() {
                 <Card className="relative overflow-hidden shadow-2xl border-2 border-primary/20 p-4 animate-float w-full max-w-xs md:max-w-md aspect-square rounded-full">
                 <div className="absolute inset-0 rounded-full border-4 border-accent/20 animate-pulse"/>
                  <Carousel
+                    plugins={[plugin.current]}
                     className="w-full h-full"
                     opts={{
                         loop: true,
                     }}
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
                  >
                     <CarouselContent>
                         {profileImages.map((image, index) => (
