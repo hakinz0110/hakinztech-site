@@ -37,9 +37,9 @@ export function AnimatedText({ phrases }: AnimatedTextProps) {
   }, [text, isDeleting, phraseIndex, phrases]);
 
   return (
-    <h1 className="font-headline text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+    <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
       <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{text}</span>
-      <span className="animate-pulse text-gray-900">|</span>
+      <span className="animate-pulse text-white">|</span>
     </h1>
   );
 }

@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 h-full flex items-center">
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left bg-black/50 p-8 rounded-lg">
                 <AnimatedText
                     phrases={[
                         "Hi there! I'm Hakinz_Tech 👋",
@@ -34,7 +34,7 @@ export function Hero() {
                         "Welcome to my world of innovation 💻🚀",
                     ]}
                 />
-                <p className="mt-6 max-w-xl text-lg text-gray-600 md:text-xl">
+                <p className="mt-6 max-w-xl text-lg text-gray-200 md:text-xl">
                     I'm a passionate creator, building beautiful and functional applications that solve real-world problems. Let's forge the future, one line of code at a time.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -43,14 +43,14 @@ export function Hero() {
                         View My Work <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="font-bold transition-transform duration-300 hover:scale-105 border-gray-400 hover:bg-gray-100">
+                    <Button asChild size="lg" variant="secondary" className="font-bold transition-transform duration-300 hover:scale-105">
                         <Link href="#contact">Let's Connect</Link>
                     </Button>
                 </div>
                 <div className="mt-12 flex gap-6">
                     {socialLinks.map(({ href, icon: Icon }) => (
                         <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
-                        <Icon className="h-6 w-6 text-gray-500 transition-colors hover:text-primary" />
+                        <Icon className="h-6 w-6 text-gray-300 transition-colors hover:text-primary" />
                         </Link>
                     ))}
                 </div>
