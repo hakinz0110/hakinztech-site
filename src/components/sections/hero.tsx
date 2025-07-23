@@ -15,7 +15,7 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative h-screen min-h-[800px] w-full overflow-hidden bg-white text-gray-800">
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:py-0">
        <div className="absolute inset-0 z-0" style={{
             backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
             backgroundSize: '1.5rem 1.5rem',
@@ -55,8 +55,8 @@ export function Hero() {
                     ))}
                 </div>
             </div>
-             <div className="hidden md:flex justify-center items-center">
-                <Card className="relative overflow-hidden shadow-2xl border-2 border-primary/20 p-4 animate-float w-full max-w-md aspect-square rounded-full">
+             <div className="flex justify-center items-center">
+                <Card className="relative overflow-hidden shadow-2xl border-2 border-primary/20 p-4 animate-float w-full max-w-xs md:max-w-md aspect-square rounded-full">
                 <div className="absolute inset-0 rounded-full border-4 border-accent/20 animate-pulse"/>
                 <Image
                     src="https://luonahsbhiopdibgxutp.supabase.co/storage/v1/object/public/portfolio-images//Akinola%20Abere.png"
