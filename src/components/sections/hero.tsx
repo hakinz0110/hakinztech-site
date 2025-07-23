@@ -15,7 +15,7 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:py-0">
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:pt-10">
        <div className="absolute inset-0 z-0" style={{
             backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
             backgroundSize: '1.5rem 1.5rem',
