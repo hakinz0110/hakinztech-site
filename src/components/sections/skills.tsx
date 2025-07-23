@@ -4,7 +4,7 @@ import { skills } from '@/lib/data';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-background/95 relative overflow-hidden">
+    <section id="skills" className="py-20 md:py-32 bg-background/95 relative overflow-hidden animate-glow">
        <div className="absolute inset-0 z-0 opacity-20" style={{
             background: 'linear-gradient(45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(-45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, hsl(var(--primary)/.1) 75%), linear-gradient(-45deg, transparent 75%, hsl(var(--primary)/.1) 75%)',
             backgroundSize: '20px 20px',

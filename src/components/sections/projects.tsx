@@ -29,7 +29,7 @@ export function Projects() {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 bg-background relative overflow-hidden animate-glow">
         <div className="absolute inset-0 z-0 opacity-5" style={{
             backgroundImage: 'repeating-conic-gradient(hsl(var(--background)) 0% 25%, hsl(var(--primary)/.1) 0% 50%)',
             backgroundPosition: '0 0, 32px 32px',

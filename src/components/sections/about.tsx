@@ -22,7 +22,7 @@ const values = [
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="about" className="py-20 md:py-32 bg-background relative overflow-hidden animate-glow">
         <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-0 left-0 h-full w-full bg-transparent" style={{
                 backgroundImage: 'radial-gradient(circle, hsl(var(--accent)/.1) 1px, transparent 1px)',

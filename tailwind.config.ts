@@ -96,12 +96,17 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'glow': {
+          '0%, 100%': { 'box-shadow': '0 0 10px -5px hsl(var(--accent))' },
+          '50%': { 'box-shadow': '0 0 20px 0px hsl(var(--accent) / 0.7)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'blob': 'blob 7s infinite',
         'float': 'float 2s ease-in-out infinite',
+        'glow': 'glow 5s ease-in-out infinite',
       },
     },
   },

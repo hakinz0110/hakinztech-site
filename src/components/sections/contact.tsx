@@ -27,7 +27,7 @@ const socialLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden animate-glow">
        <div className="absolute -bottom-1/2 -right-1/2 -z-1 h-[150%] w-[150%] opacity-5" style={{
             backgroundImage:'radial-gradient(circle at center, hsl(var(--accent)), transparent)',
             transform: 'rotate(45deg)'

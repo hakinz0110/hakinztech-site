@@ -15,7 +15,7 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:pt-10">
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:pt-10 animate-glow">
        <div className="absolute inset-0 z-0" style={{
             backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
             backgroundSize: '1.5rem 1.5rem',
@@ -38,12 +38,12 @@ export function Hero() {
                     I'm a passionate creator, building beautiful and functional applications that solve real-world problems. Let's forge the future, one line of code at a time.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                    <Button asChild size="lg" className="font-bold transition-transform duration-300 hover:scale-105">
+                    <Button asChild size="lg" className="w-full sm:w-auto font-bold transition-transform duration-300 hover:scale-105">
                         <Link href="#projects">
                         View My Work <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="secondary" className="font-bold transition-transform duration-300 hover:scale-105">
+                    <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto font-bold transition-transform duration-300 hover:scale-105">
                         <Link href="#contact">Let's Connect</Link>
                     </Button>
                 </div>
