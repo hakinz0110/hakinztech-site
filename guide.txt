@@ -1,0 +1,52 @@
+Hello! This guide will help you add the new project templates to your portfolio.
+
+I have added 20 pre-made project templates with placeholder data to your website's code. They are currently commented out so they don't show up on your live site.
+
+**How to activate and edit your new projects:**
+
+1.  **Open the data file:** Navigate to the file at this path in your project: `src/lib/data.ts`
+
+2.  **Find the commented-out projects:** Scroll to the bottom of the file. You will see a large block of code that starts with `/*` and ends with `*/`. This is where your new project templates are.
+
+3.  **Uncomment the projects:** To make them appear on your site, simply delete the opening `/*` and the closing `*/` markers. Make sure you don't delete any of the actual project code between them.
+
+4.  **Edit the content:** Once uncommented, you can start editing the content for each project. Here is a breakdown of the fields you can change for each project object:
+
+    - `id`: A unique identifier. It's best to keep this unique for each project (e.g., 'my-new-app-2024').
+    - `slug`: This is used in the URL for the project's case study page (e.g., `yoursite.com/projects/my-new-app`). Keep it short, descriptive, and use dashes instead of spaces.
+    - `title`: The title of your project.
+    - `category`: The category filter. Use one of 'Web', 'Mobile', 'UI/UX', or 'VA'.
+    - `description`: A short description that appears on the main projects page card.
+    - `longDescription`: The detailed description that appears on the case study page.
+    - `imageUrls`: An array of URLs for your project screenshots. The first image is the main one on the project card. Replace the `https://placehold.co/...` URLs with direct URLs to your own images. You can add as many as you like.
+    - `tags`: A list of technologies or skills used (e.g., 'React', 'Node.js', 'Figma').
+    - `liveSiteUrl`: The full URL to the live, deployed project. If you don't have one, you can remove this line.
+    - `sourceCodeUrl`: The full URL to the project's repository on GitHub or another platform. If you don't have one, you can remove this line.
+
+**Example of editing a project:**
+
+```javascript
+// Before
+{
+    id: 'project-template-1',
+    slug: 'project-template-1',
+    title: 'Project Template 1',
+    // ... other fields
+    imageUrls: ['https://placehold.co/1200x675.png'],
+    tags: ['Tag1', 'Tag2'],
+},
+
+// After
+{
+    id: 'my-cool-social-app',
+    slug: 'my-cool-social-app',
+    title: 'My Cool Social App',
+    // ... other fields
+    imageUrls: ['https://your-image-host.com/social-app-screenshot1.png', 'https://your-image-host.com/social-app-screenshot2.png'],
+    tags: ['Next.js', 'Firebase', 'Tailwind CSS'],
+    liveSiteUrl: 'https://my-cool-social-app.com',
+    sourceCodeUrl: 'https://github.com/your-username/my-cool-social-app',
+},
+```
+
+That's it! Just uncomment and edit, and your portfolio will grow with your skills.
