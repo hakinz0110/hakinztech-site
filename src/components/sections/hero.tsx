@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, Github, Linkedin, Twitter, Download } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 import { AnimatedText } from '@/components/animated-text';
 import { Card } from '@/components/ui/card';
 
@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 h-full flex items-center">
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left p-8 rounded-lg md:order-1 order-2">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left p-8 rounded-lg md:order-1 order-2 animate-fade-in-up">
                 <AnimatedText
                     phrases={[
                         "Hi there! I'm Hakinz_Tech 👋",
@@ -44,8 +44,8 @@ export function Hero() {
                         </Link>
                     </Button>
                     <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto font-bold transition-transform duration-300 hover:scale-105">
-                        <Link href="/resume.pdf" target="_blank" download>
-                           Download CV <Download className="ml-2 h-5 w-5" />
+                        <Link href="#contact">
+                           Contact Me <MessageCircle className="ml-2 h-5 w-5" />
                         </Link>
                     </Button>
                 </div>
