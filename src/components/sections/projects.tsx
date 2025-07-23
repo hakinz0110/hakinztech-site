@@ -16,7 +16,7 @@ import {
 import { projects, Project } from '@/lib/data';
 import { ProjectSummary } from '@/components/project-summary';
 
-const FILTERS = ['All', 'Web', 'Mobile', 'UI/UX'];
+const FILTERS = ['All', 'Web', 'Mobile', 'UI/UX', 'VA'];
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');

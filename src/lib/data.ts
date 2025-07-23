@@ -87,4 +87,13 @@ export const projects: Project[] = [
     imageUrl: 'https://placehold.co/600x400',
     tags: ['Python', 'Django', 'React', 'Automation'],
   },
+  {
+    id: 'virtual-assistant',
+    title: 'Virtual Assistance Services',
+    category: 'VA',
+    description: 'Providing remote administrative, technical, and creative support.',
+    longDescription: 'Offering comprehensive virtual assistance to streamline business operations and enhance productivity. Services include administrative tasks like data entry, email management, and scheduling, as well as customer service support. By handling these essential background tasks, I enable clients to focus on their core business activities. This service is built on reliability, efficiency, and a proactive approach to problem-solving.',
+    imageUrl: 'https://placehold.co/600x400',
+    tags: ['Admin Support', 'Data Entry', 'Customer Service', 'Productivity'],
+  }
 ];
