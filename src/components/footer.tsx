@@ -4,8 +4,8 @@ import { Code, Mail, Github, Linkedin, Twitter } from 'lucide-react';
 
 const socialLinks = [
   { href: 'https://github.com/hakinz0110', icon: Github },
-  { href: 'https://www.linkedin.com/in/hakinz0110', icon: Linkedin },
-  { href: 'https://twitter.com/hakinz_tech', icon: Twitter },
+  { href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin },
+  { href: 'https://twitter.com/hakinz10', icon: Twitter },
   { href: 'mailto:hakinztech@gmail.com', icon: Mail },
 ];
 

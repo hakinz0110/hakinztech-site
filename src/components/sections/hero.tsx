@@ -8,8 +8,8 @@ import { Card } from '@/components/ui/card';
 
 const socialLinks = [
   { href: 'https://github.com/hakinz0110', icon: Github },
-  { href: 'https://www.linkedin.com/in/hakinz0110', icon: Linkedin },
-  { href: 'https://twitter.com/hakinz_tech', icon: Twitter },
+  { href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin },
+  { href: 'https://twitter.com/hakinz10', icon: Twitter },
   { href: 'mailto:hakinztech@gmail.com', icon: Mail },
 ];
 
@@ -34,10 +34,10 @@ export function Hero() {
                         "Welcome to my world of innovation 💻🚀",
                     ]}
                 />
-                <p className="mt-6 max-w-xl text-lg text-gray-200 md:text-xl">
+                <p className="mt-6 max-w-xl text-lg text-white md:text-xl">
                     I'm a passionate creator, building beautiful and functional applications that solve real-world problems. Let's forge the future, one line of code at a time.
                 </p>
-                <div className="mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                     <Button asChild size="lg" className="font-bold transition-transform duration-300 hover:scale-105">
                         <Link href="#projects">
                         View My Work <ArrowRight className="ml-2 h-5 w-5" />

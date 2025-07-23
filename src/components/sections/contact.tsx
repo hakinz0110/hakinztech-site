@@ -27,8 +27,8 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const socialLinks = [
     { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz0110', icon: Linkedin },
-    { name: 'Twitter/X', href: 'https://twitter.com/hakinz_tech', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin },
+    { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter },
     { name: 'GitHub', href: 'https://github.com/hakinz0110', icon: Github },
 ];
 
