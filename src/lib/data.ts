@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Code, Server, Smartphone, PenTool, GitMerge, Settings, BotMessageSquare } from 'lucide-react';
+import { Code, Server, Smartphone, PenTool, GitMerge, Settings, BotMessageSquare, UserRoundCog } from 'lucide-react';
 
 export type Skill = {
   area: string;
@@ -34,9 +34,9 @@ export const skills: Skill[] = [
     tools: ['Git', 'GitHub', 'Postman', 'VS Code', 'Docker', 'Linux CLI'],
   },
   {
-    area: 'Engineering & Freelancing',
-    Icon: Settings,
-    tools: ['Metallurgical Process Design', 'Failure Analysis', 'Data Entry', 'Admin Support'],
+    area: 'Virtual Assistance',
+    Icon: UserRoundCog,
+    tools: ['Data Entry', 'Admin Support', 'Customer Service', 'Email Management'],
   },
 ];
 
