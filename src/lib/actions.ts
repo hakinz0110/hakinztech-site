@@ -2,6 +2,12 @@
 
 import { z } from "zod";
 
+// This is a placeholder for form submission logic.
+// In a real application, you would handle the form data here,
+// for example, by sending an email or saving it to a database.
+// As the form has been removed, this is no longer actively used but
+// is kept here as an example for future reference.
+
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email." }),
@@ -31,8 +37,6 @@ export async function submitContactForm(
   }
 
   try {
-    // Here you would typically send an email or save to a database.
-    // For this example, we'll just log the data.
     console.log("New contact form submission:");
     console.log(validatedFields.data);
 
