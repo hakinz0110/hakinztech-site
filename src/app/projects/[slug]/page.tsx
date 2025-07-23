@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ProjectSummary } from '@/components/project-summary';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import {
     Carousel,
@@ -51,6 +51,24 @@ export default function ProjectCaseStudyPage({ params }: { params: { slug: strin
               </div>
               <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{project.title}</h1>
               <p className="text-xl text-muted-foreground">{project.description}</p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                {project.liveSiteUrl && (
+                  <Button asChild>
+                    <Link href={project.liveSiteUrl} target="_blank">
+                      <ExternalLink className="mr-2" />
+                      View Live Site
+                    </Link>
+                  </Button>
+                )}
+                {project.sourceCodeUrl && (
+                    <Button asChild variant="secondary">
+                        <Link href={project.sourceCodeUrl} target="_blank">
+                            <Github className="mr-2" />
+                            Source Code
+                        </Link>
+                    </Button>
+                )}
+              </div>
             </header>
 
             <Carousel className="w-full">

@@ -49,6 +49,8 @@ export type Project = {
   longDescription: string;
   imageUrls: string[];
   tags: string[];
+  liveSiteUrl?: string;
+  sourceCodeUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -67,6 +69,8 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['Flutter', 'Firebase', 'Mobile'],
+    liveSiteUrl: '#',
+    sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
     id: 'tip-calculator',
@@ -83,6 +87,7 @@ export const projects: Project[] = [
         'https://placehold.co/800x1200.png',
     ],
     tags: ['Android', 'Java', 'XML'],
+    sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
     id: 'finance-dashboard',
@@ -100,6 +105,7 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png',
     ],
     tags: ['Figma', 'UI/UX', 'Web'],
+    liveSiteUrl: '#',
   },
   {
     id: 'report-generator',
@@ -116,6 +122,7 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png',
     ],
     tags: ['Python', 'Django', 'React', 'Automation'],
+    sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
     id: 'virtual-assistant',
