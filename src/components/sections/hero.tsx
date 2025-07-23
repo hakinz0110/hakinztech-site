@@ -4,7 +4,12 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Mail, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 import { AnimatedText } from '@/components/animated-text';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+  } from "@/components/ui/carousel"
 
 const socialLinks = [
   { href: 'https://github.com/hakinz0110', icon: Github },
@@ -12,6 +17,24 @@ const socialLinks = [
   { href: 'https://twitter.com/hakinz10', icon: Twitter },
   { href: 'mailto:hakinztech@gmail.com', icon: Mail },
 ];
+
+const profileImages = [
+    {
+      src: "https://luonahsbhiopdibgxutp.supabase.co/storage/v1/object/public/portfolio-images//Akinola%20Abere.png",
+      alt: "Hakinz_Tech - Professional Portrait 1",
+      hint: "professional developer portrait"
+    },
+    {
+        src: "https://placehold.co/500x500.png",
+        alt: "Hakinz_Tech - Professional Portrait 2",
+        hint: "developer at work"
+    },
+    {
+        src: "https://placehold.co/500x500.png",
+        alt: "Hakinz_Tech - Professional Portrait 3",
+        hint: "developer in office"
+    }
+]
 
 export function Hero() {
   return (
@@ -60,15 +83,28 @@ export function Hero() {
              <div className="flex justify-center items-center md:order-2 order-1">
                 <Card className="relative overflow-hidden shadow-2xl border-2 border-primary/20 p-4 animate-float w-full max-w-xs md:max-w-md aspect-square rounded-full">
                 <div className="absolute inset-0 rounded-full border-4 border-accent/20 animate-pulse"/>
-                <Image
-                    src="https://luonahsbhiopdibgxutp.supabase.co/storage/v1/object/public/portfolio-images//Akinola%20Abere.png"
-                    alt="Hakinz_Tech"
-                    width={500}
-                    height={500}
-                    priority
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-full"
-                    data-ai-hint="professional developer portrait"
-                />
+                 <Carousel
+                    className="w-full h-full"
+                    opts={{
+                        loop: true,
+                    }}
+                 >
+                    <CarouselContent>
+                        {profileImages.map((image, index) => (
+                            <CarouselItem key={index}>
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    width={500}
+                                    height={500}
+                                    priority={index === 0}
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-full"
+                                    data-ai-hint={image.hint}
+                                />
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
                 </Card>
             </div>
         </div>
