@@ -58,13 +58,13 @@ export function About() {
                 </div>
             </div>
             <div className="order-1 md:order-2">
-                <Card className="overflow-hidden shadow-lg border-2 border-primary/20 transition-transform duration-300 hover:scale-105 hover:shadow-primary/20">
+                <Card className="overflow-hidden shadow-lg border-2 border-primary/20 transition-transform duration-300 hover:scale-105 hover:shadow-primary/20 p-4">
                 <Image
                     src="https://placehold.co/600x700"
                     alt="Hakinz_Tech"
                     width={600}
                     height={700}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-lg"
                     data-ai-hint="professional developer portrait"
                 />
                 </Card>
