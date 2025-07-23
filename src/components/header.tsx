@@ -38,15 +38,15 @@ export function Header() {
           <Code className="h-6 w-6 text-primary" />
           <span>Hakinz_Tech</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-muted-foreground transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
+            <Button key={link.href} asChild variant="ghost" className="font-semibold transition-transform duration-300 hover:scale-105">
+                <Link
+                href={link.href}
+                >
+                {link.label}
+                </Link>
+            </Button>
           ))}
         </nav>
         <div className="md:hidden">
