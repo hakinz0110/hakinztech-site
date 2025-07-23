@@ -42,6 +42,7 @@ export const skills: Skill[] = [
 
 export type Project = {
   id: string;
+  slug: string;
   title: string;
   category: string;
   description: string;
@@ -53,6 +54,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'e-commerce-app',
+    slug: 'e-commerce-app',
     title: 'E-Commerce Mobile App',
     category: 'Mobile',
     description: 'A complete shopping experience with Firebase integration.',
@@ -62,6 +64,7 @@ export const projects: Project[] = [
   },
   {
     id: 'tip-calculator',
+    slug: 'tip-calculator',
     title: 'Tip Calculator App',
     category: 'Mobile',
     description: 'An Android app built from scratch using Java & XML.',
@@ -71,6 +74,7 @@ export const projects: Project[] = [
   },
   {
     id: 'finance-dashboard',
+    slug: 'finance-dashboard',
     title: 'UI/UX Redesign for Finance Dashboard',
     category: 'UI/UX',
     description: 'A finance dashboard prototype for the web, focusing on usability.',
@@ -80,6 +84,7 @@ export const projects: Project[] = [
   },
   {
     id: 'report-generator',
+    slug: 'report-generator',
     title: 'Engineering Report Generator',
     category: 'Web',
     description: 'Document automation for metallurgical analysis reports.',
@@ -89,6 +94,7 @@ export const projects: Project[] = [
   },
   {
     id: 'virtual-assistant',
+    slug: 'virtual-assistant',
     title: 'Virtual Assistance Services',
     category: 'VA',
     description: 'Providing remote administrative, technical, and creative support.',

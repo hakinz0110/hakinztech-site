@@ -2,19 +2,11 @@
 
 import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 import { projects, Project } from '@/lib/data';
-import { ProjectSummary } from '@/components/project-summary';
 
 const FILTERS = ['All', 'Web', 'Mobile', 'UI/UX', 'VA'];
 
@@ -39,7 +31,7 @@ export function Projects() {
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects & Portfolio</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            A few highlights from my growing portfolio.
+            A few highlights from my growing portfolio. Click on any project to see the case study.
           </p>
         </div>
         <div className="mt-8 flex justify-center gap-2 md:gap-4">
@@ -56,9 +48,8 @@ export function Projects() {
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project: Project) => (
-            <Dialog key={project.id}>
-              <DialogTrigger asChild>
-                <Card className="group overflow-hidden cursor-pointer bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2">
+            <Link key={project.id} href={`/projects/${project.slug}`} className="group">
+                <Card className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2 h-full flex flex-col">
                   <div className="overflow-hidden">
                     <Image
                       src={project.imageUrl}
@@ -69,48 +60,17 @@ export function Projects() {
                       data-ai-hint="technology project screenshot"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex flex-col flex-grow">
                     <div className="flex flex-wrap gap-2 mb-2">
                       {project.tags.map(tag => (
                         <Badge key={tag} variant="secondary">{tag}</Badge>
                       ))}
                     </div>
                     <h3 className="font-headline text-xl font-semibold text-foreground">{project.title}</h3>
-                    <p className="mt-2 text-muted-foreground">{project.description}</p>
+                    <p className="mt-2 text-muted-foreground flex-grow">{project.description}</p>
                   </CardContent>
                 </Card>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="font-headline text-2xl md:text-3xl text-primary">{project.title}</DialogTitle>
-                  <DialogDescription className="text-base text-muted-foreground">{project.description}</DialogDescription>
-                </DialogHeader>
-                <div className="grid md:grid-cols-2 gap-6 mt-4">
-                  <div>
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className="w-full rounded-lg object-cover"
-                       data-ai-hint="technology project screenshot"
-                    />
-                  </div>
-                  <div className="space-y-4">
-                     <h4 className="font-headline text-lg font-semibold">About this project</h4>
-                     <p className="text-muted-foreground">{project.longDescription}</p>
-                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map(tag => (
-                        <Badge key={tag} variant="outline">{tag}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-6">
-                   <ProjectSummary projectDescription={project.longDescription} />
-                </div>
-              </DialogContent>
-            </Dialog>
+            </Link>
           ))}
         </div>
       </div>
