@@ -18,11 +18,11 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
   );
 
 const socialLinks = [
-    { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail, cta: "Send an Email" },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin, cta: "Connect on LinkedIn" },
-    { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter, cta: "Follow on Twitter" },
     { name: 'GitHub', href: 'https://github.com/hakinz0110', icon: Github, cta: "View on GitHub" },
+    { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter, cta: "Follow on Twitter" },
     { name: 'WhatsApp', href: 'https://wa.me/2349138477491', icon: WhatsappIcon, cta: "Message on WhatsApp" },
+    { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail, cta: "Send an Email" },
 ];
 
 export function Contact() {
