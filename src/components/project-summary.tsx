@@ -37,10 +37,10 @@ export function ProjectSummary({ projectDescription }: ProjectSummaryProps) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 font-headline text-xl">
           <BotMessageSquare className="h-6 w-6 text-accent" />
-          <span>AI Project Summarizer</span>
+          <span>Project Summarizer</span>
         </CardTitle>
         <CardDescription>
-          Get a quick, AI-generated summary of this project.
+          Get a quick summary of this project.
         </CardDescription>
       </CardHeader>
       <CardContent>
