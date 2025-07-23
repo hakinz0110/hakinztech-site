@@ -32,17 +32,17 @@ export function About() {
       <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 space-y-6">
-                <div className="p-4 bg-white rounded-lg shadow-lg">
+                <div className="p-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     <h2 className="font-headline text-3xl font-bold tracking-tight text-black sm:text-4xl">
                         From Metallurgy to Modern Web
                     </h2>
                 </div>
-                <div className="p-4 bg-white rounded-lg shadow-lg">
+                <div className="p-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     <p className="text-lg text-black">
                     My journey began in the world of Metallurgical Engineering, where precision and problem-solving are paramount. This unique background instilled in me a meticulous approach to complex systems, a perspective I now bring to the digital realm. Today, as a <span className="font-bold text-primary">Software Engineer</span>, I forge elegant code and intuitive user experiences with the same passion and precision.
                     </p>
                 </div>
-                <div className="p-4 bg-white rounded-lg shadow-lg">
+                <div className="p-4 bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     <p className="text-lg text-black">
                     I thrive on transforming innovative ideas into scalable, user-centric applications. Whether it's full-stack development, native mobile apps, or seamless UI/UX, I am dedicated to building technology that makes a difference.
                     </p>
