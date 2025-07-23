@@ -19,7 +19,11 @@ export function Hero() {
       <div className="absolute inset-0 z-0 opacity-20" style={{
             background: 'radial-gradient(circle at 50% 50%, hsl(var(--primary)/.1), transparent 70%), radial-gradient(circle at 10% 20%, hsl(var(--accent)/.1), transparent 50%), radial-gradient(circle at 90% 80%, hsl(var(--accent)/.1), transparent 50%)',
       }}/>
-       <div className="absolute inset-0 z-0 bg-grid-pattern" />
+       <div className="absolute inset-0 z-0" style={{
+            backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
+            backgroundSize: '1.5rem 1.5rem',
+            opacity: 0.1,
+       }}/>
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 h-full flex items-center">
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
