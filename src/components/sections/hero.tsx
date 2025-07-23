@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 h-full flex items-center">
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left bg-black/50 p-8 rounded-lg">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left bg-black/50 p-8 rounded-lg md:order-1 order-2">
                 <AnimatedText
                     phrases={[
                         "Hi there! I'm Hakinz_Tech 👋",
@@ -55,7 +55,7 @@ export function Hero() {
                     ))}
                 </div>
             </div>
-             <div className="flex justify-center items-center">
+             <div className="flex justify-center items-center md:order-2 order-1">
                 <Card className="relative overflow-hidden shadow-2xl border-2 border-primary/20 p-4 animate-float w-full max-w-xs md:max-w-md aspect-square rounded-full">
                 <div className="absolute inset-0 rounded-full border-4 border-accent/20 animate-pulse"/>
                 <Image
