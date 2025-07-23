@@ -35,7 +35,7 @@ const socialLinks = [
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full font-bold">
+    <Button type="submit" disabled={pending} className="w-full font-bold transition-transform duration-300 hover:scale-105">
       {pending ? "Sending..." : "Send Message"}
       <Send className="ml-2 h-4 w-4" />
     </Button>
@@ -73,8 +73,12 @@ export function Contact() {
   }, [state, toast, reset]);
   
   return (
-    <section id="contact" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6">
+    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden">
+       <div className="absolute -bottom-1/2 -right-1/2 -z-1 h-[150%] w-[150%] opacity-5" style={{
+            backgroundImage:'radial-gradient(circle at center, hsl(var(--accent)), transparent)',
+            transform: 'rotate(45deg)'
+       }}/>
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Let's Connect</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -115,7 +119,7 @@ export function Contact() {
              <p className="text-muted-foreground">You can also find me on these platforms:</p>
              <div className="space-y-4">
                 {socialLinks.map(({ name, href, icon: Icon }) => (
-                    <Link key={name} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                    <Link key={name} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group transition-transform duration-300 hover:scale-105">
                         <div className="p-3 rounded-md bg-secondary group-hover:bg-primary transition-colors">
                             <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
                         </div>

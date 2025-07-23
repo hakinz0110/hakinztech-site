@@ -16,7 +16,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
                 <Code className="h-6 w-6 text-primary" />
-                <span className="font-headline text-lg font-bold">Hakinz.Tech</span>
+                <span className="font-headline text-lg font-bold">Hakinz_Tech</span>
             </div>
             <p className="text-sm text-muted-foreground">
                 &copy; {new Date().getFullYear()} Hakinz_Tech. All rights reserved.

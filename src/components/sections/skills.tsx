@@ -4,8 +4,12 @@ import { skills } from '@/lib/data';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-background/95">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6">
+    <section id="skills" className="py-20 md:py-32 bg-background/95 relative overflow-hidden">
+       <div className="absolute inset-0 z-0 opacity-20" style={{
+            background: 'linear-gradient(45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(-45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, hsl(var(--primary)/.1) 75%), linear-gradient(-45deg, transparent 75%, hsl(var(--primary)/.1) 75%)',
+            backgroundSize: '20px 20px',
+        }} />
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">What I Do</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">

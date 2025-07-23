@@ -29,8 +29,13 @@ export function Projects() {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6">
+    <section id="projects" className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-5" style={{
+            backgroundImage: 'repeating-conic-gradient(hsl(var(--background)) 0% 25%, hsl(var(--primary)/.1) 0% 50%)',
+            backgroundPosition: '0 0, 32px 32px',
+            backgroundSize: '64px 64px',
+        }}/>
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Projects & Portfolio</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -43,7 +48,7 @@ export function Projects() {
               key={filter}
               variant={activeFilter === filter ? 'default' : 'outline'}
               onClick={() => setActiveFilter(filter)}
-              className="font-semibold"
+              className="font-semibold transition-transform duration-300 hover:scale-105"
             >
               {filter}
             </Button>

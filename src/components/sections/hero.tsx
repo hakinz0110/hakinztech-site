@@ -33,15 +33,15 @@ export function Hero() {
           ]}
         />
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          A versatile tech enthusiast transforming ideas into scalable digital products, solving real-world problems, and learning emerging technologies that shape the future.
+          I'm a passionate creator, building beautiful and functional applications that solve real-world problems. Let's forge the future, one line of code at a time.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
-          <Button asChild size="lg" className="font-bold">
+          <Button asChild size="lg" className="font-bold transition-transform duration-300 hover:scale-105">
             <Link href="#projects">
               View My Work <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="font-bold">
+          <Button asChild size="lg" variant="outline" className="font-bold transition-transform duration-300 hover:scale-105">
             <Link href="#contact">Let's Connect</Link>
           </Button>
         </div>

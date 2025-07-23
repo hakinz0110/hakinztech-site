@@ -3,11 +3,17 @@ import { Card, CardContent } from '@/components/ui/card';
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 md:px-6">
+    <section id="about" className="py-20 md:py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+            <div className="absolute top-0 left-0 h-full w-full bg-transparent" style={{
+                backgroundImage: 'radial-gradient(circle, hsl(var(--accent)/.1) 1px, transparent 1px)',
+                backgroundSize: '2rem 2rem'
+            }}/>
+        </div>
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="grid md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-2">
-            <Card className="overflow-hidden shadow-lg border-2 border-primary/20">
+            <Card className="overflow-hidden shadow-lg border-2 border-primary/20 transition-transform duration-300 hover:scale-105 hover:shadow-primary/20">
               <Image
                 src="https://placehold.co/600x600"
                 alt="Hakinz_Tech"
