@@ -5,7 +5,12 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'HakinzTech Digital Forge',
-  description: 'Software Engineer | Web / Mobile Developer | UI/UX Designer',
+  description: 'Hakinz_Tech – Web Developer, Designer & Innovator.',
+  openGraph: {
+    title: 'HakinzTech Portfolio',
+    description: 'Explore my projects, skills, and contact me for collaborations.',
+    images: ['/preview.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -16,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet"></link>
