@@ -18,11 +18,11 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
   );
 
 const socialLinks = [
-    { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin },
-    { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter },
-    { name: 'GitHub', href: 'https://github.com/hakinz0110', icon: Github },
-    { name: 'WhatsApp', href: 'https://wa.me/2349138477491', icon: WhatsappIcon },
+    { name: 'Email', href: 'mailto:hakinztech@gmail.com', icon: Mail, cta: "Send an Email" },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/hakinz-tech', icon: Linkedin, cta: "Connect on LinkedIn" },
+    { name: 'Twitter/X', href: 'https://twitter.com/hakinz10', icon: Twitter, cta: "Follow on Twitter" },
+    { name: 'GitHub', href: 'https://github.com/hakinz0110', icon: Github, cta: "View on GitHub" },
+    { name: 'WhatsApp', href: 'https://wa.me/2349138477491', icon: WhatsappIcon, cta: "Message on WhatsApp" },
 ];
 
 export function Contact() {
@@ -36,26 +36,26 @@ export function Contact() {
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Let's Connect</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Have a project in mind or just want to say hi? Feel free to reach out.
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
         </div>
-        <div className="mt-12 flex justify-center">
-          <div className="space-y-6">
-             <h3 className="font-headline text-2xl font-semibold text-center">You can find me on these platforms:</h3>
-             <div className="space-y-4">
-                {socialLinks.map(({ name, href, icon: Icon }) => (
-                    <Link key={name} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group transition-transform duration-300 hover:scale-105">
-                        <div className="p-3 rounded-md bg-secondary group-hover:bg-primary transition-colors">
-                            <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                        </div>
-                        <div>
-                           <p className="font-semibold text-lg">{name}</p>
-                           <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">Let's connect</p>
+        <div className="mt-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {socialLinks.map(({ name, href, icon: Icon, cta }) => (
+                    <Link key={name} href={href} target="_blank" rel="noopener noreferrer" className="group">
+                        <div className="p-6 rounded-lg bg-secondary/50 border border-border/50 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-primary/50 hover:bg-secondary/80 hover:-translate-y-2">
+                           <div className="p-3 rounded-full bg-primary/10 mb-4">
+                             <Icon className="h-8 w-8 text-primary" />
+                           </div>
+                           <h3 className="font-headline text-xl font-semibold">{name}</h3>
+                           <p className="text-sm text-muted-foreground mt-1 flex-grow">{cta}</p>
+                           <p className="mt-4 text-xs font-semibold text-primary/80 group-hover:text-primary transition-colors">
+                            Click to connect &rarr;
+                           </p>
                         </div>
                     </Link>
                 ))}
-             </div>
-          </div>
+            </div>
         </div>
       </div>
     </section>
