@@ -8,6 +8,14 @@ import { ProjectSummary } from '@/components/project-summary';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { ArrowLeft } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+  } from "@/components/ui/carousel"
 
 export async function generateStaticParams() {
   return projects.map(project => ({
@@ -45,15 +53,31 @@ export default function ProjectCaseStudyPage({ params }: { params: { slug: strin
               <p className="text-xl text-muted-foreground">{project.description}</p>
             </header>
 
-            <Image
-              src={project.imageUrl}
-              alt={project.title}
-              width={1200}
-              height={675}
-              className="w-full rounded-lg object-cover border border-border"
-              data-ai-hint="technology project screenshot"
-              priority
-            />
+            <Carousel className="w-full">
+                <CarouselContent>
+                    {project.imageUrls.map((url, index) => (
+                    <CarouselItem key={index}>
+                        <div className="p-1">
+                        <Card>
+                            <CardContent className="flex aspect-[16/9] items-center justify-center p-0">
+                                <Image
+                                    src={url}
+                                    alt={`${project.title} - Image ${index + 1}`}
+                                    width={1200}
+                                    height={675}
+                                    className="w-full h-full object-cover rounded-lg"
+                                    data-ai-hint="technology project screenshot"
+                                    priority={index === 0}
+                                />
+                            </CardContent>
+                        </Card>
+                        </div>
+                    </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
 
             <div className="prose prose-invert max-w-none text-lg text-foreground">
                 <h2 className="font-headline text-3xl font-bold">About this project</h2>

@@ -52,7 +52,7 @@ export function Projects() {
                 <Card className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2 h-full flex flex-col">
                   <div className="overflow-hidden">
                     <Image
-                      src={project.imageUrl}
+                      src={project.imageUrls[0]}
                       alt={project.title}
                       width={600}
                       height={400}

@@ -47,7 +47,7 @@ export type Project = {
   category: string;
   description: string;
   longDescription: string;
-  imageUrl: string;
+  imageUrls: string[];
   tags: string[];
 };
 
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     category: 'Mobile',
     description: 'A complete shopping experience with Firebase integration.',
     longDescription: 'This project is a feature-rich e-commerce mobile application built using Flutter for cross-platform compatibility. It provides a seamless shopping experience for users, from browsing products to completing purchases. The backend is powered by Firebase, utilizing services like Firestore for the product database, Authentication for user management, and Cloud Storage for product images. Key features include a dynamic product catalog, search and filtering functionality, a shopping cart, a secure checkout process, and order history tracking for users.',
-    imageUrl: 'https://placehold.co/600x400',
+    imageUrls: ['https://placehold.co/1200x675', 'https://placehold.co/1200x675', 'https://placehold.co/1200x675'],
     tags: ['Flutter', 'Firebase', 'Mobile'],
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     category: 'Mobile',
     description: 'An Android app built from scratch using Java & XML.',
     longDescription: 'A practical and user-friendly tip calculator application for Android devices. Developed natively using Java and XML for the user interface, this app was a foundational project to master Android development principles. It allows users to input their bill amount, select a tip percentage via a slider or custom input, and specify the number of people to split the bill with. The app instantly calculates the tip amount and the total per person, providing a clean and intuitive interface for quick calculations on the go.',
-    imageUrl: 'https://placehold.co/600x400',
+    imageUrls: ['https://placehold.co/1200x675'],
     tags: ['Android', 'Java', 'XML'],
   },
   {
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     category: 'UI/UX',
     description: 'A finance dashboard prototype for the web, focusing on usability.',
     longDescription: 'This project involved a complete UI/UX redesign of a conceptual finance dashboard. The primary goal was to improve data visualization and user interaction, making complex financial data accessible and easy to understand. Using Figma, I created a high-fidelity prototype that includes features like an overview of accounts, interactive charts for tracking income and expenses, transaction history with filtering, and budgeting tools. The design emphasizes a clean, modern aesthetic with a clear visual hierarchy to enhance usability and provide a seamless user experience.',
-    imageUrl: 'https://placehold.co/600x400',
+    imageUrls: ['https://placehold.co/1200x675', 'https://placehold.co/1200x675'],
     tags: ['Figma', 'UI/UX', 'Web'],
   },
   {
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     category: 'Web',
     description: 'Document automation for metallurgical analysis reports.',
     longDescription: 'This is a web-based application designed to automate the generation of standardized engineering reports for metallurgical analysis. Built with a Python Django backend and a React frontend, the tool allows engineers to input raw data from various tests (e.g., tensile strength, hardness, microstructure analysis). The system then processes this data and generates a professional, formatted PDF report based on predefined templates. This significantly reduces manual effort, minimizes errors, and ensures consistency in reporting across the organization.',
-    imageUrl: 'https://placehold.co/600x400',
+    imageUrls: ['https://placehold.co/1200x675'],
     tags: ['Python', 'Django', 'React', 'Automation'],
   },
   {
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     category: 'VA',
     description: 'Providing remote administrative, technical, and creative support.',
     longDescription: 'Offering comprehensive virtual assistance to streamline business operations and enhance productivity. Services include administrative tasks like data entry, email management, and scheduling, as well as customer service support. By handling these essential background tasks, I enable clients to focus on their core business activities. This service is built on reliability, efficiency, and a proactive approach to problem-solving.',
-    imageUrl: 'https://placehold.co/600x400',
+    imageUrls: ['https://placehold.co/1200x675'],
     tags: ['Admin Support', 'Data Entry', 'Customer Service', 'Productivity'],
   }
 ];
