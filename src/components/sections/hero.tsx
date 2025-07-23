@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Twitter, Download } from 'lucide-react';
 import { AnimatedText } from '@/components/animated-text';
 import { Card } from '@/components/ui/card';
 
@@ -15,7 +15,7 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-white text-gray-800 py-20 md:pt-10 animate-glow">
+    <section id="hero" className="relative min-h-screen w-full overflow-hidden bg-background text-foreground py-20 md:pt-32 animate-glow">
        <div className="absolute inset-0 z-0" style={{
             backgroundImage: 'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',
             backgroundSize: '1.5rem 1.5rem',
@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 h-full flex items-center">
         <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col items-center md:items-start text-center md:text-left bg-black/50 p-8 rounded-lg md:order-1 order-2">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left p-8 rounded-lg md:order-1 order-2">
                 <AnimatedText
                     phrases={[
                         "Hi there! I'm Hakinz_Tech 👋",
@@ -34,7 +34,7 @@ export function Hero() {
                         "Welcome to my world of innovation 💻🚀",
                     ]}
                 />
-                <p className="mt-6 max-w-xl text-lg text-white md:text-xl">
+                <p className="mt-6 max-w-xl text-lg text-foreground md:text-xl">
                     I'm a passionate creator, building beautiful and functional applications that solve real-world problems. Let's forge the future, one line of code at a time.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -44,13 +44,15 @@ export function Hero() {
                         </Link>
                     </Button>
                     <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto font-bold transition-transform duration-300 hover:scale-105">
-                        <Link href="#contact">Let's Connect</Link>
+                        <Link href="/resume.pdf" target="_blank" download>
+                           Download CV <Download className="ml-2 h-5 w-5" />
+                        </Link>
                     </Button>
                 </div>
                 <div className="mt-12 flex gap-6">
                     {socialLinks.map(({ href, icon: Icon }) => (
                         <Link key={href} href={href} target="_blank" rel="noopener noreferrer">
-                        <Icon className="h-6 w-6 text-gray-300 transition-colors hover:text-primary" />
+                        <Icon className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                         </Link>
                     ))}
                 </div>
