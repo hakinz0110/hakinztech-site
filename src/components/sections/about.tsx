@@ -49,10 +49,10 @@ export function About() {
                 </div>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
                    {values.map(({ Icon, title, description }) => (
-                       <div key={title} className="flex flex-col items-center text-center p-4 rounded-lg transition-colors hover:bg-card/50">
+                       <div key={title} className="flex flex-col items-center text-center p-4 rounded-lg bg-white shadow-lg transition-transform duration-300 hover:scale-105">
                            <Icon className="h-10 w-10 text-accent mb-3" />
-                           <h3 className="font-headline text-lg font-semibold">{title}</h3>
-                           <p className="text-sm text-muted-foreground mt-1">{description}</p>
+                           <h3 className="font-headline text-lg font-semibold text-black">{title}</h3>
+                           <p className="text-sm text-black/80 mt-1">{description}</p>
                        </div>
                    ))}
                 </div>
