@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'luonahsbhiopdibgxutp.supabase.co',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'famcletgbthuoiiylcox.supabase.co',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
