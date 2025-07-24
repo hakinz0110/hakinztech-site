@@ -23,12 +23,12 @@ export function Skills() {
           </p>
         </div>
         <div className="mt-12 max-w-5xl mx-auto">
-          <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+          <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
             {skillTracks.map((track, index) => (
-              <AccordionItem key={track.track} value={`item-${index}`}>
-                 <AccordionTrigger>
-                    <div className="flex items-center gap-4 py-2">
-                        <div className="p-2 rounded-md bg-primary/10">
+              <AccordionItem key={track.track} value={`item-${index}`} className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/50 px-6 transition-all hover:border-primary/50">
+                 <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-4 py-4">
+                        <div className="p-3 rounded-md bg-primary/10">
                             <track.Icon className="h-8 w-8 text-primary" />
                         </div>
                         <div>
@@ -38,7 +38,7 @@ export function Skills() {
                     </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                    <div className="grid md:grid-cols-2 gap-8 pt-4 pb-2">
+                    <div className="grid md:grid-cols-2 gap-8 pt-4 pb-6">
                         <div className="space-y-6">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold">
                                <Wrench className="h-5 w-5 text-accent" />
