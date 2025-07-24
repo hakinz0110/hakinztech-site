@@ -34,11 +34,6 @@ const profileImages = [
         hint: "professional developer portrait"
     },
     {
-        src: "https://famcletgbthuoiiylcox.supabase.co/storage/v1/object/public/portfoliowebsite/profile/hakinz_Tech7%20(1).png",
-        alt: "Hakinz_Tech - Professional Portrait 5",
-        hint: "developer at work"
-    },
-    {
         src: "https://famcletgbthuoiiylcox.supabase.co/storage/v1/object/public/portfoliowebsite/profile/Hakinz-Tech2.png",
         alt: "Hakinz_Tech - Professional Portrait 7",
         hint: "professional developer portrait"
