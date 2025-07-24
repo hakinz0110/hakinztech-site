@@ -4,7 +4,6 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { skillTracks } from '@/lib/data';
 import { CheckCircle2, Wrench, Star } from "lucide-react";
@@ -40,17 +39,24 @@ export function Skills() {
                 </AccordionTrigger>
                 <AccordionContent>
                     <div className="grid md:grid-cols-2 gap-8 pt-4 pb-2">
-                        <div>
-                            <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
+                        <div className="space-y-6">
+                            <h4 className="flex items-center gap-2 font-headline text-lg font-semibold">
                                <Wrench className="h-5 w-5 text-accent" />
                                Technical Skills
                             </h4>
-                            <div className="flex flex-wrap gap-2">
-                            {track.technicalSkills.map((tool) => (
-                                <Badge key={tool} variant="secondary" className="text-sm font-medium">
-                                {tool}
-                                </Badge>
-                            ))}
+                            <div className="space-y-4">
+                                {track.technicalSkills.map((category) => (
+                                    <div key={category.title}>
+                                        <h5 className="font-semibold text-foreground mb-2">{category.title}</h5>
+                                        <div className="flex flex-wrap gap-2">
+                                            {category.skills.map((tool) => (
+                                                <Badge key={tool} variant="secondary" className="text-sm font-medium">
+                                                {tool}
+                                                </Badge>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                          <div>

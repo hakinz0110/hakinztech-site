@@ -1,11 +1,16 @@
 import type { LucideIcon } from 'lucide-react';
 import { Code, Server, Smartphone, PenTool, GitMerge, Settings, BotMessageSquare, UserRoundCog, Star, GanttChartSquare, Beaker, Briefcase } from 'lucide-react';
 
+export type SkillSubCategory = {
+  title: string;
+  skills: string[];
+};
+
 export type SkillTrack = {
   track: string;
   description: string;
   Icon: LucideIcon;
-  technicalSkills: string[];
+  technicalSkills: SkillSubCategory[];
   softSkills: string[];
 };
 
@@ -15,20 +20,26 @@ export const skillTracks: SkillTrack[] = [
     description: 'Web, Mobile, UI/UX',
     Icon: Code,
     technicalSkills: [
-      'HTML, CSS, JavaScript',
-      'React.js, Vue.js, Next.js',
-      'Tailwind CSS, Bootstrap',
-      'Node.js, Express.js',
-      'Django (Python), Laravel (PHP)',
-      'Firebase Realtime DB & Firestore',
-      'REST API, MVC Architecture',
-      'Android Studio (Java, Kotlin)',
-      'Flutter (Dart)',
-      'Figma, Adobe XD, Photoshop',
-      'Prototyping, Wireframing, Design Systems',
-      'Git & GitHub',
-      'Postman, Docker',
-      'VS Code, Linux CLI',
+      {
+        title: 'Frontend',
+        skills: ['HTML, CSS, JavaScript', 'React.js, Vue.js, Next.js', 'Tailwind CSS, Bootstrap'],
+      },
+      {
+        title: 'Backend',
+        skills: ['Node.js, Express.js', 'Django (Python), Laravel (PHP)', 'Firebase Realtime DB & Firestore', 'REST API, MVC Architecture'],
+      },
+      {
+        title: 'Mobile Development',
+        skills: ['Android Studio (Java, Kotlin)', 'Flutter (Dart)'],
+      },
+      {
+        title: 'UI/UX Design',
+        skills: ['Figma', 'Adobe XD', 'Photoshop', 'Prototyping, Wireframing, Design Systems'],
+      },
+      {
+        title: 'DevOps & Tools',
+        skills: ['Git & GitHub', 'Postman', 'Docker', 'VS Code', 'Linux CLI'],
+      },
     ],
     softSkills: [
       'Problem Solving & Logical Thinking',
@@ -45,13 +56,18 @@ export const skillTracks: SkillTrack[] = [
     description: 'Metallurgical & Materials',
     Icon: Beaker,
     technicalSkills: [
-      'Metallurgical Process Design',
-      'Material Failure Analysis & Fractography',
-      'Mechanical Testing (Tensile, Hardness, etc.)',
-      'Technical Research Writing',
-      'Report Automation Tools',
-      'Microsoft Word & Excel (Advanced)',
-      'Research Tools: Google Scholar, ScienceDirect',
+        {
+            title: 'Core Competencies',
+            skills: [
+                'Metallurgical Process Design',
+                'Material Failure Analysis & Fractography',
+                'Mechanical Testing (Tensile, Hardness, etc.)',
+                'Technical Research Writing',
+                'Report Automation Tools (e.g., Report Generators)',
+                'Microsoft Word & Excel (Advanced)',
+                'Research Tools: Google Scholar, ScienceDirect',
+            ]
+        }
     ],
     softSkills: [
       'Scientific Writing & Reporting',
@@ -68,13 +84,19 @@ export const skillTracks: SkillTrack[] = [
     description: 'Remote Freelancing',
     Icon: Briefcase,
     technicalSkills: [
-      'Admin Support',
-      'Data Entry & Management',
-      'Internet Research & Reporting',
-      'CRM Tools (HubSpot, Zoho, Notion)',
-      'Google Workspace & Microsoft Office Suite',
-      'File Management (Google Drive, Dropbox)',
-      'Customer Service Tools (Chat, Email, Ticketing)',
+        {
+            title: 'Core Competencies',
+            skills: [
+                'Admin Support',
+                'Data Entry & Management',
+                'Internet Research & Reporting',
+                'CRM Tools (e.g., HubSpot, Zoho, Notion)',
+                'Google Workspace (Docs, Sheets, Slides)',
+                'Microsoft Office Suite',
+                'File Management (Google Drive, Dropbox)',
+                'Customer Service Tools (Chat, Email, Ticketing systems)',
+            ]
+        }
     ],
     softSkills: [
       'Communication & Responsiveness',
@@ -520,4 +542,5 @@ export const blogPosts: BlogPost[] = [
 ];
 
     
+
 
