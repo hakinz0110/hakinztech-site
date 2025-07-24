@@ -25,7 +25,7 @@ export function Skills() {
         <div className="mt-12 max-w-5xl mx-auto">
           <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
             {skillTracks.map((track, index) => (
-              <AccordionItem key={track.track} value={`item-${index}`} className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/50 px-6 transition-all hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
+              <AccordionItem key={track.track} value={`item-${index}`} className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/50 px-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
                  <AccordionTrigger className="hover:no-underline">
                     <div className="flex items-center gap-4 py-4">
                         <div className="p-3 rounded-md bg-primary/10">
@@ -39,7 +39,7 @@ export function Skills() {
                 </AccordionTrigger>
                 <AccordionContent>
                     <div className="grid md:grid-cols-2 gap-8 pt-4 pb-6">
-                        <div className="space-y-6 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner transition-all duration-300 hover:shadow-lg">
+                        <div className="space-y-6 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold">
                                <Wrench className="h-5 w-5 text-accent" />
                                Technical Skills
@@ -59,7 +59,7 @@ export function Skills() {
                                 ))}
                             </div>
                         </div>
-                         <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner transition-all duration-300 hover:shadow-lg">
+                         <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
                                 <Star className="h-5 w-5 text-accent" />
                                 Soft Skills
