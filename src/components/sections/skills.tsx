@@ -1,6 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+  } from "@/components/ui/accordion"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { skills } from '@/lib/data';
+import { skillTracks } from '@/lib/data';
+import { CheckCircle2, Wrench, Star } from "lucide-react";
 
 export function Skills() {
   return (
@@ -11,31 +18,60 @@ export function Skills() {
         }} />
       <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">What I Do</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            A snapshot of my technical skills and the tools I use to bring ideas to life.
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">My Expertise</h2>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+            I bring a unique blend of skills from technology, engineering, and professional services to every project. Here's a look at what I can do.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
-            <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <skill.Icon className="h-7 w-7 text-primary" />
-                  <span className="font-headline text-2xl">{skill.area}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skill.tools.map((tool, toolIndex) => (
-                    <Badge key={toolIndex} variant="secondary" className="text-sm font-medium">
-                      {tool}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mt-12 max-w-5xl mx-auto">
+          <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+            {skillTracks.map((track, index) => (
+              <AccordionItem key={track.track} value={`item-${index}`}>
+                 <AccordionTrigger>
+                    <div className="flex items-center gap-4 py-2">
+                        <div className="p-2 rounded-md bg-primary/10">
+                            <track.Icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <div>
+                            <h3 className="font-headline text-xl font-semibold text-left">{track.track}</h3>
+                            <p className="text-sm text-muted-foreground text-left">{track.description}</p>
+                        </div>
+                    </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                    <div className="grid md:grid-cols-2 gap-8 pt-4 pb-2">
+                        <div>
+                            <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
+                               <Wrench className="h-5 w-5 text-accent" />
+                               Technical Skills
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                            {track.technicalSkills.map((tool) => (
+                                <Badge key={tool} variant="secondary" className="text-sm font-medium">
+                                {tool}
+                                </Badge>
+                            ))}
+                            </div>
+                        </div>
+                         <div>
+                            <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
+                                <Star className="h-5 w-5 text-accent" />
+                                Soft Skills
+                            </h4>
+                            <ul className="space-y-2">
+                            {track.softSkills.map((skill) => (
+                                <li key={skill} className="flex items-center gap-2 text-muted-foreground">
+                                   <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+                                   <span>{skill}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </div>
+                    </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

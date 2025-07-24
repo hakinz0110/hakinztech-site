@@ -1,5 +1,93 @@
 import type { LucideIcon } from 'lucide-react';
-import { Code, Server, Smartphone, PenTool, GitMerge, Settings, BotMessageSquare, UserRoundCog, Star, GanttChartSquare } from 'lucide-react';
+import { Code, Server, Smartphone, PenTool, GitMerge, Settings, BotMessageSquare, UserRoundCog, Star, GanttChartSquare, Beaker, Briefcase } from 'lucide-react';
+
+export type SkillTrack = {
+  track: string;
+  description: string;
+  Icon: LucideIcon;
+  technicalSkills: string[];
+  softSkills: string[];
+};
+
+export const skillTracks: SkillTrack[] = [
+  {
+    track: 'TECH TRACK',
+    description: 'Web, Mobile, UI/UX',
+    Icon: Code,
+    technicalSkills: [
+      'HTML, CSS, JavaScript',
+      'React.js, Vue.js, Next.js',
+      'Tailwind CSS, Bootstrap',
+      'Node.js, Express.js',
+      'Django (Python), Laravel (PHP)',
+      'Firebase Realtime DB & Firestore',
+      'REST API, MVC Architecture',
+      'Android Studio (Java, Kotlin)',
+      'Flutter (Dart)',
+      'Figma, Adobe XD, Photoshop',
+      'Prototyping, Wireframing, Design Systems',
+      'Git & GitHub',
+      'Postman, Docker',
+      'VS Code, Linux CLI',
+    ],
+    softSkills: [
+      'Problem Solving & Logical Thinking',
+      'Adaptability to New Tools',
+      'Design Sensitivity & Detail-Oriented',
+      'Collaboration (Agile/Scrum Teams)',
+      'Technical Documentation',
+      'Continuous Learning',
+      'Time Management',
+    ],
+  },
+  {
+    track: 'ENGINEERING TRACK',
+    description: 'Metallurgical & Materials',
+    Icon: Beaker,
+    technicalSkills: [
+      'Metallurgical Process Design',
+      'Material Failure Analysis & Fractography',
+      'Mechanical Testing (Tensile, Hardness, etc.)',
+      'Technical Research Writing',
+      'Report Automation Tools',
+      'Microsoft Word & Excel (Advanced)',
+      'Research Tools: Google Scholar, ScienceDirect',
+    ],
+    softSkills: [
+      'Scientific Writing & Reporting',
+      'Analytical Thinking',
+      'Precision & Attention to Detail',
+      'Data Interpretation & Visualization',
+      'Research & Experimentation',
+      'Technical Communication',
+      'Team Collaboration in Lab/Field',
+    ],
+  },
+  {
+    track: 'VIRTUAL ASSISTANCE TRACK',
+    description: 'Remote Freelancing',
+    Icon: Briefcase,
+    technicalSkills: [
+      'Admin Support',
+      'Data Entry & Management',
+      'Internet Research & Reporting',
+      'CRM Tools (HubSpot, Zoho, Notion)',
+      'Google Workspace & Microsoft Office Suite',
+      'File Management (Google Drive, Dropbox)',
+      'Customer Service Tools (Chat, Email, Ticketing)',
+    ],
+    softSkills: [
+      'Communication & Responsiveness',
+      'Confidentiality & Trustworthiness',
+      'Multitasking & Task Prioritization',
+      'Attention to Detail',
+      'Time Management',
+      'Reliability & Proactive Execution',
+      'Client Relationship Management',
+    ],
+  },
+];
+
 
 export type Skill = {
   area: string;
@@ -432,3 +520,4 @@ export const blogPosts: BlogPost[] = [
 ];
 
     
+
