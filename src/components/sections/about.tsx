@@ -44,13 +44,13 @@ export function About() {
             </div>
             <div className="grid grid-cols-1 gap-6">
                 {corePrinciples.map(({ Icon, title, description }) => (
-                    <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 dark:bg-white/5 bg-gray-900/5">
+                    <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-background/20 border border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 dark:bg-white/5 dark:text-foreground bg-sky-100 text-black">
                         <div className="p-3 rounded-md bg-primary/10">
                             <Icon className="h-8 w-8 text-primary" />
                         </div>
                         <div>
-                            <h3 className="font-headline text-lg font-semibold text-foreground">{title}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{description}</p>
+                            <h3 className="font-headline text-lg font-semibold text-foreground dark:text-white">{title}</h3>
+                            <p className="text-sm text-muted-foreground dark:text-gray-300 mt-1">{description}</p>
                         </div>
                     </div>
                 ))}

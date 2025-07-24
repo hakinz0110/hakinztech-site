@@ -10,7 +10,7 @@ import { CheckCircle2, Wrench, Star } from "lucide-react";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-background/95 relative overflow-hidden animate-glow">
+    <section id="skills" className="py-20 md:py-32 bg-background/95 relative overflow-hidden">
        <div className="absolute inset-0 z-0 opacity-20" style={{
             background: 'linear-gradient(45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(-45deg, hsl(var(--primary)/.1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, hsl(var(--primary)/.1) 75%), linear-gradient(-45deg, transparent 75%, hsl(var(--primary)/.1) 75%)',
             backgroundSize: '20px 20px',
@@ -25,7 +25,7 @@ export function Skills() {
         <div className="mt-12 max-w-5xl mx-auto">
           <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
             {skillTracks.map((track, index) => (
-              <AccordionItem key={track.track} value={`item-${index}`} className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/50 px-6 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2">
+              <AccordionItem key={track.track} value={`item-${index}`} className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/50 px-6 transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2">
                  <AccordionTrigger className="hover:no-underline">
                     <div className="flex items-center gap-4 py-4">
                         <div className="p-3 rounded-md bg-primary/10">
@@ -39,7 +39,7 @@ export function Skills() {
                 </AccordionTrigger>
                 <AccordionContent>
                     <div className="grid md:grid-cols-2 gap-8 pt-4 pb-6">
-                        <div className="space-y-6 bg-background p-6 rounded-lg border border-border shadow-inner transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 text-foreground dark:bg-white dark:text-black">
+                        <div className="space-y-6 bg-background/20 dark:bg-white/5 bg-sky-100 p-6 rounded-lg border border-border shadow-inner transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 text-black dark:text-foreground">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold">
                                <Wrench className="h-5 w-5 text-accent" />
                                Technical Skills
@@ -59,7 +59,7 @@ export function Skills() {
                                 ))}
                             </div>
                         </div>
-                         <div className="space-y-4 bg-background p-6 rounded-lg border border-border shadow-inner transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 text-foreground dark:bg-white dark:text-black">
+                         <div className="space-y-4 bg-background/20 dark:bg-white/5 bg-sky-100 p-6 rounded-lg border border-border shadow-inner transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 text-black dark:text-foreground">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
                                 <Star className="h-5 w-5 text-accent" />
                                 Soft Skills
