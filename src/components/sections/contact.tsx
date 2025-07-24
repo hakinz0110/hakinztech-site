@@ -43,7 +43,7 @@ export function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {socialLinks.map(({ name, href, icon: Icon, cta }) => (
                     <Link key={name} href={href} target="_blank" rel="noopener noreferrer" className="group">
-                        <div className="p-6 rounded-lg bg-secondary/50 border border-border/50 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-primary/50 hover:bg-secondary/80 hover:-translate-y-2">
+                        <div className="p-6 rounded-lg bg-secondary/50 border border-border/50 h-full flex flex-col items-center text-center transition-all duration-300 hover:border-primary/50 hover:bg-secondary/80 hover:-translate-y-2 hover:shadow-2xl">
                            <div className="p-3 rounded-full bg-primary/10 mb-4">
                              <Icon className="h-8 w-8 text-primary" />
                            </div>

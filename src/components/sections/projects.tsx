@@ -49,7 +49,7 @@ export function Projects() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project: Project) => (
             <Link key={project.id} href={`/projects/${project.slug}`} className="group">
-                <Card className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2 h-full flex flex-col">
+                <Card className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
                   <div className="overflow-hidden">
                     <Image
                       src={project.imageUrls[0]}

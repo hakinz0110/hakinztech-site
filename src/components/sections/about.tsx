@@ -44,7 +44,7 @@ export function About() {
             </div>
             <div className="grid grid-cols-1 gap-6">
                 {corePrinciples.map(({ Icon, title, description }) => (
-                    <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:-translate-y-2 dark:bg-white/5 bg-gray-900/5">
+                    <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 dark:bg-white/5 bg-gray-900/5">
                         <div className="p-3 rounded-md bg-primary/10">
                             <Icon className="h-8 w-8 text-primary" />
                         </div>
