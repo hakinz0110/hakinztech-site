@@ -39,7 +39,7 @@ export function Skills() {
                 </AccordionTrigger>
                 <AccordionContent>
                     <div className="grid md:grid-cols-2 gap-8 pt-4 pb-6">
-                        <div className="space-y-6">
+                        <div className="space-y-6 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold">
                                <Wrench className="h-5 w-5 text-accent" />
                                Technical Skills
@@ -59,7 +59,7 @@ export function Skills() {
                                 ))}
                             </div>
                         </div>
-                         <div>
+                         <div className="space-y-4 bg-background/50 p-6 rounded-lg border border-border/50 shadow-inner">
                             <h4 className="flex items-center gap-2 font-headline text-lg font-semibold mb-4">
                                 <Star className="h-5 w-5 text-accent" />
                                 Soft Skills
