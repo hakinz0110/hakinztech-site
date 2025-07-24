@@ -143,7 +143,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Web'],
-    liveSiteUrl: '#',
     sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
@@ -173,7 +172,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['Figma', 'UI/UX', 'Design System'],
-    liveSiteUrl: '#',
   },
   {
     id: 'project-template-4',
@@ -202,7 +200,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['React', 'D3.js', 'Data Viz', 'Web'],
-    liveSiteUrl: '#',
   },
   {
     id: 'project-template-6',
@@ -242,7 +239,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['Vue.js', 'Web', 'Template'],
-    liveSiteUrl: '#',
     sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
@@ -299,7 +295,6 @@ export const projects: Project[] = [
         'https://placehold.co/800x1200.png'
     ],
     tags: ['React Native', 'Mobile', 'API'],
-    liveSiteUrl: '#',
   },
   {
     id: 'project-template-13',
@@ -379,7 +374,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['React', 'API', 'Web'],
-    liveSiteUrl: '#',
   },
   {
     id: 'project-template-19',
