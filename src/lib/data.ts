@@ -59,7 +59,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png'
     ],
     tags: ['Flutter', 'Firebase', 'Mobile'],
-    liveSiteUrl: '#',
     sourceCodeUrl: 'https://github.com/hakinz0110',
   },
   {
@@ -95,7 +94,6 @@ export const projects: Project[] = [
         'https://placehold.co/1200x675.png',
     ],
     tags: ['Figma', 'UI/UX', 'Web'],
-    liveSiteUrl: '#',
   },
   {
     id: 'report-generator',
