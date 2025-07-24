@@ -34,15 +34,15 @@ export function ProjectsSlider() {
 
         <div className="space-y-16">
           {projects.map((project: Project, index) => (
-            <Card key={project.id} className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <Card key={project.id} className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 dark:bg-white/5 dark:text-foreground bg-sky-100 text-black">
               <div className="flex flex-col justify-center">
                   <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
                       <Badge key={tag} variant="secondary">{tag}</Badge>
                       ))}
                   </div>
-                  <h3 className="font-headline text-2xl md:text-3xl font-bold text-foreground mb-4">{project.title}</h3>
-                  <p className="text-muted-foreground text-lg mb-6">{project.description}</p>
+                  <h3 className="font-headline text-2xl md:text-3xl font-bold text-foreground mb-4 dark:text-white">{project.title}</h3>
+                  <p className="text-muted-foreground text-lg mb-6 dark:text-gray-300">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-4 mb-6">
                     {project.liveSiteUrl && (
@@ -63,7 +63,7 @@ export function ProjectsSlider() {
                     )}
                   </div>
 
-                  <Button asChild variant="ghost" className="justify-start p-0 h-auto hover:bg-transparent">
+                  <Button asChild variant="ghost" className="justify-start p-0 h-auto hover:bg-transparent text-primary dark:text-primary">
                      <Link href={`/projects/${project.slug}`}>
                         Read Case Study
                         <ArrowRight className="ml-2 h-4 w-4" />
