@@ -34,7 +34,7 @@ export function ProjectsSlider() {
 
         <div className="space-y-16">
           {projects.map((project: Project, index) => (
-            <Card key={project.id} className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8">
+            <Card key={project.id} className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="flex flex-col justify-center">
                   <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
