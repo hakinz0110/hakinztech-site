@@ -70,29 +70,31 @@ export function ProjectsSlider() {
                     </Link>
                   </Button>
               </div>
-
-              <Carousel className="w-full">
-                <CarouselContent>
-                    {project.imageUrls.map((url, index) => (
-                    <CarouselItem key={index}>
-                        <div className="p-1">
-                            <CardContent className="flex aspect-[16/9] items-center justify-center p-0 rounded-lg overflow-hidden">
-                                <Image
-                                    src={url}
-                                    alt={`${project.title} - Image ${index + 1}`}
-                                    width={1200}
-                                    height={675}
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                    data-ai-hint="technology project screenshot"
-                                />
-                            </CardContent>
-                        </div>
-                    </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2"/>
-              </Carousel>
+              
+              {project.imageUrls && project.imageUrls.length > 0 && (
+                <Carousel className="w-full">
+                  <CarouselContent>
+                      {project.imageUrls.map((url, index) => (
+                      <CarouselItem key={index}>
+                          <div className="p-1">
+                              <CardContent className="flex aspect-[16/9] items-center justify-center p-0 rounded-lg overflow-hidden">
+                                  <Image
+                                      src={url}
+                                      alt={`${project.title} - Image ${index + 1}`}
+                                      width={1200}
+                                      height={675}
+                                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                      data-ai-hint="technology project screenshot"
+                                  />
+                              </CardContent>
+                          </div>
+                      </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2"/>
+                </Carousel>
+              )}
             </Card>
           ))}
         </div>
