@@ -1,19 +1,21 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 type AnimatedTextProps = {
   phrases: string[];
+  className?: string;
 };
 
-export function AnimatedText({ phrases }: AnimatedTextProps) {
+export function AnimatedText({ phrases, className }: AnimatedTextProps) {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
-    const typingSpeed = isDeleting ? 75 : 150;
+    const typingSpeed = isDeleting ? 40 : 80;
 
     const handleTyping = () => {
       setText(
@@ -23,7 +25,6 @@ export function AnimatedText({ phrases }: AnimatedTextProps) {
       );
 
       if (!isDeleting && text === currentPhrase) {
-        // Pause before deleting
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
@@ -32,14 +33,18 @@ export function AnimatedText({ phrases }: AnimatedTextProps) {
     };
 
     const timer = setTimeout(handleTyping, typingSpeed);
-
     return () => clearTimeout(timer);
   }, [text, isDeleting, phraseIndex, phrases]);
 
   return (
-    <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-      <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{text}</span>
-      <span className="animate-pulse text-white">|</span>
+    <h1 className={cn(
+      "font-headline font-bold tracking-tight min-h-[1.3em] leading-tight",
+      className
+    )}>
+      <span className="bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
+        {text}
+      </span>
+      <span className="inline-block w-[2px] md:w-[3px] h-[0.85em] bg-primary ml-0.5 md:ml-1 animate-pulse align-middle" />
     </h1>
   );
 }

@@ -1,0 +1,113 @@
+{
+  "profile": {
+    "name": "Hakinz_Tech",
+    "title": "Software Engineer & Full-Stack Developer",
+    "tagline": "Transforming ideas into beautiful, functional apps that solve real problems.",
+    "availableForHire": true,
+    "yearsExperience": "5+",
+    "location": "Nigeria (Remote Worldwide)",
+    "responseTime": "Within 24 hours",
+    "email": "hakinztech@gmail.com",
+    "phone": "+2349138477491",
+    "images": [
+      {
+        "src": "/uploads/profile/1765312472546-sfot15.jpg",
+        "fallback": "/uploads/profile/1765312472546-sfot15.jpg",
+        "alt": "Hakinz_Tech - Professional Portrait"
+      },
+      {
+        "src": "/uploads/profile/hakinz-2.png",
+        "fallback": "https://placehold.co/500x500/2A2A2A/40E0D0?text=HT",
+        "alt": "Hakinz_Tech - Professional Portrait"
+      },
+      {
+        "src": "/uploads/profile/hakinz-3.png",
+        "fallback": "https://placehold.co/500x500/2A2A2A/63B5FF?text=HT",
+        "alt": "Hakinz_Tech - Professional Portrait"
+      }
+    ],
+    "typingPhrases": [
+      "Hi, I'm Hakinz_Tech 👋",
+      "Software Engineer",
+      "Full-Stack Developer",
+      "UI/UX Designer",
+      "Let's build together 🚀"
+    ],
+    "highlights": [
+      "Full-Stack",
+      "Mobile Apps",
+      "UI/UX"
+    ]
+  },
+  "social": {
+    "github": "https://github.com/hakinz0110",
+    "linkedin": "https://www.linkedin.com/in/hakinz-tech",
+    "twitter": "https://twitter.com/hakinz10",
+    "whatsapp": "https://wa.me/2349138477491"
+  },
+  "stats": {
+    "yearsExperience": "5+",
+    "projectsCompleted": "50+",
+    "happyClients": "30+",
+    "technologies": "10+"
+  },
+  "about": {
+    "headline": "From Metallurgy to Modern Web",
+    "paragraphs": [
+      "My journey began in Metallurgical Engineering, where precision and problem-solving are paramount.",
+      "Today, as a Software Engineer, I forge elegant code and intuitive user experiences with the same passion and precision.",
+      "Whether it's building a responsive web app, designing a mobile app, or crafting a seamless UX, I bring dedication and technical excellence to every project."
+    ],
+    "principles": [
+      {
+        "icon": "GraduationCap",
+        "title": "Engineering Background",
+        "description": "Metallurgical Engineering background with rigorous problem-solving skills."
+      },
+      {
+        "icon": "Wrench",
+        "title": "Pragmatic Builder",
+        "description": "Building practical, scalable solutions that deliver real value."
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Creative Technologist",
+        "description": "Creating intuitive and engaging user experiences."
+      }
+    ]
+  },
+  "skills": {
+    "coreSkills": [
+      {
+        "name": "React / Next.js",
+        "level": 95,
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "name": "TypeScript",
+        "level": 90,
+        "color": "from-blue-600 to-blue-400"
+      },
+      {
+        "name": "Node.js",
+        "level": 88,
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "name": "Flutter / Dart",
+        "level": 85,
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "name": "UI/UX Design",
+        "level": 92,
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "name": "Firebase",
+        "level": 90,
+        "color": "from-orange-500 to-yellow-500"
+      }
+    ]
+  }
+}
