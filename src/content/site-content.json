@@ -19,6 +19,11 @@
         "src": "/uploads/profile/1765320400351-ua8lzj.jpg",
         "fallback": "/uploads/profile/1765320400351-ua8lzj.jpg",
         "alt": "Profile Image"
+      },
+      {
+        "src": "/uploads/profile/1765320462470-f9atl4.jpg",
+        "fallback": "/uploads/profile/1765320462470-f9atl4.jpg",
+        "alt": "Profile Image"
       }
     ],
     "typingPhrases": [
