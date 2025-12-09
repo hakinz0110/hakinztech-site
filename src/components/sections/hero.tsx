@@ -51,76 +51,60 @@ export function Hero() {
           {/* Profile Image - First on mobile */}
           <div className="flex justify-center items-center md:order-2 order-1">
             <div className="relative group">
-              {/* Animated gradient border */}
-              <div className="absolute -inset-1 md:-inset-1.5 rounded-2xl md:rounded-3xl bg-gradient-to-r from-primary via-accent to-primary opacity-75 blur-sm group-hover:opacity-100 transition-opacity duration-500 animate-gradient-x" />
+              {/* Outer rotating ring */}
+              <div className="absolute -inset-3 md:-inset-4 rounded-full border-2 border-dashed border-primary/30 animate-spin-slow" />
               
-              {/* Outer glow effect */}
-              <div className="absolute -inset-4 md:-inset-6 rounded-2xl md:rounded-3xl bg-primary/10 blur-2xl opacity-50" />
+              {/* Animated gradient glow */}
+              <div className="absolute -inset-2 md:-inset-3 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-60 blur-xl group-hover:opacity-80 transition-opacity duration-500 animate-gradient-x" />
               
-              {/* Main image container */}
-              <div className="relative w-56 h-64 sm:w-64 sm:h-72 md:w-80 md:h-96 lg:w-[340px] lg:h-[420px] rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/80 border border-border/50 shadow-2xl">
-                {/* Inner frame */}
-                <div className="absolute inset-2 md:inset-3 rounded-xl md:rounded-2xl overflow-hidden bg-muted/30">
-                  <Carousel
-                    plugins={[plugin.current]}
-                    className="w-full h-full"
-                    opts={{ loop: true }}
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                  >
-                    <CarouselContent>
-                      {profile.images.map((image, index) => (
-                        <CarouselItem key={index}>
-                          <FallbackImage
-                            src={image.src}
-                            fallbackSrc={image.fallback}
-                            alt={image.alt}
-                            width={500}
-                            height={600}
-                            priority={index === 0}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                  </Carousel>
-                  
-                  {/* Subtle overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+              {/* Main circular container */}
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl shadow-primary/20">
+                {/* Gradient border ring */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary p-1">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                    <Carousel
+                      plugins={[plugin.current]}
+                      className="w-full h-full"
+                      opts={{ loop: true }}
+                      onMouseEnter={plugin.current.stop}
+                      onMouseLeave={plugin.current.reset}
+                    >
+                      <CarouselContent className="h-full">
+                        {profile.images.map((image, index) => (
+                          <CarouselItem key={index} className="h-full">
+                            <div className="relative w-full h-full">
+                              <FallbackImage
+                                src={image.src}
+                                fallbackSrc={image.fallback}
+                                alt={image.alt}
+                                fill
+                                priority={index === 0}
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                              />
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
+                  </div>
                 </div>
-                
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 md:w-12 md:h-12 border-t-2 border-l-2 border-primary/50 rounded-tl-2xl md:rounded-tl-3xl" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 md:w-12 md:h-12 border-b-2 border-r-2 border-primary/50 rounded-br-2xl md:rounded-br-3xl" />
               </div>
 
-              {/* Floating badges - modern pill design */}
-              <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 z-10">
-                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/25 animate-float">
-                  <span className="font-bold text-xs md:text-sm">{profile.yearsExperience}+ Years</span>
+              {/* Experience badge - top right */}
+              <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 z-10">
+                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/30 animate-float">
+                  <span className="font-bold text-xs md:text-sm whitespace-nowrap">{profile.yearsExperience}+ Years</span>
                 </div>
               </div>
               
-              <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 z-10" style={{ animationDelay: '1s' }}>
-                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-card border-2 border-primary/30 shadow-lg animate-float flex items-center gap-1.5">
+              {/* Hire Me badge - bottom left */}
+              <div className="absolute -bottom-2 -left-2 md:-bottom-3 md:-left-3 z-10">
+                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-card/95 backdrop-blur-sm border-2 border-primary/40 shadow-lg animate-float flex items-center gap-1.5" style={{ animationDelay: '1s' }}>
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                   </span>
                   <span className="font-bold text-xs md:text-sm">Hire Me</span>
-                </div>
-              </div>
-              
-              {/* Tech stack indicator */}
-              <div className="absolute top-1/2 -right-2 md:-right-3 -translate-y-1/2 z-10 hidden sm:flex flex-col gap-2">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-card border border-border/50 shadow-md flex items-center justify-center text-lg animate-float" style={{ animationDelay: '0.5s' }}>
-                  ⚛️
-                </div>
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-card border border-border/50 shadow-md flex items-center justify-center text-lg animate-float" style={{ animationDelay: '1s' }}>
-                  📱
-                </div>
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-card border border-border/50 shadow-md flex items-center justify-center text-lg animate-float" style={{ animationDelay: '1.5s' }}>
-                  🚀
                 </div>
               </div>
             </div>
