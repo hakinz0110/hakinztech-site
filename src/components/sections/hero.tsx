@@ -6,14 +6,8 @@ import { FallbackImage } from '@/components/ui/fallback-image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Mail, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
 import { AnimatedText } from '@/components/animated-text';
-import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
+
 import { ParticleBackground } from '@/components/ui/particles';
 import { GradientText } from '@/components/ui/gradient-text';
 import { getProfile, getSocial } from '@/lib/content';
@@ -30,10 +24,6 @@ const socialLinks = [
 ];
 
 export function Hero() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  )
-
   return (
     <section id="hero" className="relative min-h-[100dvh] w-full overflow-hidden bg-background text-foreground">
       {/* Only show particles on larger screens for performance */}
@@ -52,53 +42,36 @@ export function Hero() {
           <div className="flex justify-center items-center md:order-2 order-1">
             <div className="relative group">
               {/* Outer rotating ring */}
-              <div className="absolute -inset-3 md:-inset-4 rounded-full border-2 border-dashed border-primary/30 animate-spin-slow" />
+              <div className="absolute -inset-4 md:-inset-5 rounded-full border-2 border-dashed border-primary/30 animate-spin-slow" />
               
               {/* Animated gradient glow */}
-              <div className="absolute -inset-2 md:-inset-3 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-60 blur-xl group-hover:opacity-80 transition-opacity duration-500 animate-gradient-x" />
+              <div className="absolute -inset-3 md:-inset-4 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-50 blur-2xl group-hover:opacity-70 transition-opacity duration-500 animate-gradient-x" />
               
-              {/* Main circular container */}
-              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl shadow-primary/20">
-                {/* Gradient border ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-accent to-primary p-1">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                    <Carousel
-                      plugins={[plugin.current]}
-                      className="w-full h-full"
-                      opts={{ loop: true }}
-                      onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}
-                    >
-                      <CarouselContent className="h-full">
-                        {profile.images.map((image, index) => (
-                          <CarouselItem key={index} className="h-full">
-                            <div className="relative w-full h-full">
-                              <FallbackImage
-                                src={image.src}
-                                fallbackSrc={image.fallback}
-                                alt={image.alt}
-                                fill
-                                priority={index === 0}
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                              />
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                    </Carousel>
-                  </div>
+              {/* Gradient border ring */}
+              <div className="relative p-1 rounded-full bg-gradient-to-br from-primary via-accent to-primary shadow-2xl shadow-primary/25">
+                {/* Inner container with image */}
+                <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-card">
+                  <FallbackImage
+                    src={profile.images[0]?.src || ""}
+                    fallbackSrc={profile.images[0]?.fallback || "https://placehold.co/400x400/2A2A2A/63B5FF?text=HT"}
+                    alt={profile.images[0]?.alt || "Profile"}
+                    width={400}
+                    height={400}
+                    priority
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
               </div>
 
               {/* Experience badge - top right */}
-              <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 z-10">
+              <div className="absolute top-2 -right-2 md:top-4 md:-right-4 z-10">
                 <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/30 animate-float">
-                  <span className="font-bold text-xs md:text-sm whitespace-nowrap">{profile.yearsExperience}+ Years</span>
+                  <span className="font-bold text-xs md:text-sm whitespace-nowrap">{profile.yearsExperience} Years</span>
                 </div>
               </div>
               
               {/* Hire Me badge - bottom left */}
-              <div className="absolute -bottom-2 -left-2 md:-bottom-3 md:-left-3 z-10">
+              <div className="absolute bottom-2 -left-2 md:bottom-4 md:-left-4 z-10">
                 <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-card/95 backdrop-blur-sm border-2 border-primary/40 shadow-lg animate-float flex items-center gap-1.5" style={{ animationDelay: '1s' }}>
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
