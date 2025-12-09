@@ -56,13 +56,13 @@ export function ParticleBackground() {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle
+        // Draw particle - Gold theme
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99, 181, 255, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(184, 134, 11, ${particle.opacity * 0.6})`;
         ctx.fill();
 
-        // Connect nearby particles
+        // Connect nearby particles - Gold/Bronze connections
         particles.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
@@ -72,7 +72,7 @@ export function ParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(64, 224, 208, ${0.15 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `rgba(212, 175, 55, ${0.12 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

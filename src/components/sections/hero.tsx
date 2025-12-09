@@ -25,15 +25,11 @@ const socialLinks = [
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-[100dvh] w-full overflow-hidden bg-background text-foreground">
-      {/* Only show particles on larger screens for performance */}
-      <div className="hidden md:block">
-        <ParticleBackground />
-      </div>
-      
-      {/* Gradient orbs - smaller on mobile */}
-      <div className="absolute top-1/4 -left-16 md:-left-32 w-48 md:w-96 h-48 md:h-96 bg-primary/20 rounded-full blur-3xl animate-blob" />
-      <div className="absolute bottom-1/4 -right-16 md:-right-32 w-48 md:w-96 h-48 md:h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
+    <section id="hero" className="relative min-h-[100dvh] w-full overflow-hidden bg-background text-foreground bg-pattern">
+      {/* Elegant golden gradient orbs */}
+      <div className="absolute top-20 -left-20 md:-left-40 w-64 md:w-[500px] h-64 md:h-[500px] bg-gradient-to-br from-primary/15 to-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 -right-20 md:-right-40 w-64 md:w-[500px] h-64 md:h-[500px] bg-gradient-to-tl from-accent/15 to-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 min-h-[100dvh] flex items-center relative z-10 py-16 pt-20 md:py-20 md:pt-32">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center w-full">
@@ -47,13 +43,13 @@ export function Hero() {
               {/* Animated gradient glow */}
               <div className="absolute -inset-3 md:-inset-4 rounded-full bg-gradient-to-r from-primary via-accent to-primary opacity-50 blur-2xl group-hover:opacity-70 transition-opacity duration-500 animate-gradient-x" />
               
-              {/* Gradient border ring */}
-              <div className="relative p-1 rounded-full bg-gradient-to-br from-primary via-accent to-primary shadow-2xl shadow-primary/25">
+              {/* Elegant gold gradient border ring */}
+              <div className="relative p-1.5 rounded-full gold-gradient shadow-2xl glow-gold">
                 {/* Inner container with image */}
-                <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-card">
+                <div className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-card ring-4 ring-white/50">
                   <FallbackImage
                     src={profile.images[0]?.src || ""}
-                    fallbackSrc={profile.images[0]?.fallback || "https://placehold.co/400x400/2A2A2A/63B5FF?text=HT"}
+                    fallbackSrc={profile.images[0]?.fallback || "https://placehold.co/400x400/FFFBF5/B8860B?text=HT"}
                     alt={profile.images[0]?.alt || "Profile"}
                     width={400}
                     height={400}
@@ -65,19 +61,19 @@ export function Hero() {
 
               {/* Experience badge - top right */}
               <div className="absolute top-2 -right-2 md:top-4 md:-right-4 z-10">
-                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg shadow-primary/30 animate-float">
-                  <span className="font-bold text-xs md:text-sm whitespace-nowrap">{profile.yearsExperience} Years</span>
+                <div className="px-4 py-2 md:px-5 md:py-2.5 rounded-full gold-gradient text-white shadow-lg glow-gold animate-float">
+                  <span className="font-bold text-xs md:text-sm whitespace-nowrap drop-shadow-sm">{profile.yearsExperience} Years</span>
                 </div>
               </div>
               
               {/* Hire Me badge - bottom left */}
               <div className="absolute bottom-2 -left-2 md:bottom-4 md:-left-4 z-10">
-                <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-card/95 backdrop-blur-sm border-2 border-primary/40 shadow-lg animate-float flex items-center gap-1.5" style={{ animationDelay: '1s' }}>
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                <div className="px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white/95 backdrop-blur-sm border-2 border-primary/30 shadow-xl animate-float flex items-center gap-2" style={{ animationDelay: '1s' }}>
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                   </span>
-                  <span className="font-bold text-xs md:text-sm">Hire Me</span>
+                  <span className="font-bold text-xs md:text-sm text-foreground">Hire Me</span>
                 </div>
               </div>
             </div>

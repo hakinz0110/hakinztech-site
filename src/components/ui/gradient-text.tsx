@@ -13,7 +13,7 @@ export function GradientText({ children, className, animate = false }: GradientT
   return (
     <span
       className={cn(
-        'bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent',
+        'bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#8B6914] bg-clip-text text-transparent',
         animate && 'animate-gradient bg-[length:200%_auto]',
         className
       )}

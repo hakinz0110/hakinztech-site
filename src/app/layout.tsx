@@ -5,8 +5,8 @@ import './globals.css';
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#2A2A2A' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFBF5' },
+    { media: '(prefers-color-scheme: dark)', color: '#151310' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -87,7 +87,7 @@ export default function RootLayout({
       <body className="font-body antialiased selection:bg-primary selection:text-primary-foreground bg-background min-h-screen">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
