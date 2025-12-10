@@ -40,7 +40,7 @@ export function Hero() {
           <div className="flex justify-center items-center md:order-2 order-1">
             <div className="relative">
               {/* Background card for image */}
-              <div className="absolute -inset-8 md:-inset-12 bg-white/60 backdrop-blur-sm rounded-[3rem] shadow-2xl shadow-primary/10 border border-white/80" />
+              <div className="absolute -inset-8 md:-inset-12 bg-white rounded-[3rem] shadow-2xl shadow-stone-900/10 border border-primary/10" />
               
               {/* Floating stats cards */}
               <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 z-20">
@@ -94,7 +94,7 @@ export function Hero() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left md:order-1 order-2">
             
             {/* Info card container */}
-            <div className="w-full max-w-xl bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-xl shadow-primary/5 border border-white/80">
+            <div className="w-full max-w-xl bg-white rounded-3xl p-8 md:p-10 shadow-2xl shadow-stone-900/10 border border-primary/10">
               
               {/* Location & Response time */}
               <div className="flex flex-wrap items-center gap-4 mb-6 justify-center md:justify-start">

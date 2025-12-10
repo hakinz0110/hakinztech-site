@@ -27,15 +27,12 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute top-0 left-0 h-full w-full" style={{
-          backgroundImage: 'radial-gradient(circle, hsl(var(--accent)/.15) 1px, transparent 1px)',
-          backgroundSize: '1.5rem 1.5rem md:2rem md:2rem'
-        }} />
-      </div>
-      <div className="absolute top-1/2 right-0 w-48 md:w-96 h-48 md:h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+    <section id="about" className="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-white">
+      {/* Solid white background for contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white" />
+      
+      {/* Decorative accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         {/* Stats Section - 2x2 grid on mobile */}
@@ -44,7 +41,7 @@ export function About() {
             {stats.map((stat) => (
               <div 
                 key={stat.label}
-                className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 group active:scale-95"
+                className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-primary/20 shadow-lg shadow-primary/5 hover:shadow-xl hover:border-primary/40 transition-all duration-300 group active:scale-95"
               >
                 <stat.Icon className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-2 md:mb-3 text-primary group-hover:scale-110 transition-transform" />
                 <div className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
@@ -80,7 +77,7 @@ export function About() {
               const Icon = iconMap[principle.icon] || Lightbulb;
               return (
                 <ScrollReveal key={principle.title} delay={index * 100} direction="right">
-                  <div className="group flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl active:scale-[0.98]">
+                  <div className="group flex items-start gap-3 md:gap-4 p-4 md:p-5 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-primary/20 shadow-md transition-all duration-300 hover:border-primary/40 hover:shadow-xl active:scale-[0.98]">
                     <div className="p-2.5 md:p-3 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/10 group-hover:scale-110 transition-transform flex-shrink-0">
                       <Icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
                     </div>
