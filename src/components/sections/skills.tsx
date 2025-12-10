@@ -9,31 +9,43 @@ import {
 } from "@/components/ui/accordion"
 import { Badge } from '@/components/ui/badge';
 import { skillTracks } from '@/lib/data';
-import { CheckCircle2, Wrench, Star, TrendingUp } from "lucide-react";
+import { CheckCircle2, Wrench, Star, TrendingUp, Code2, Server, Smartphone, Palette, Database } from "lucide-react";
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { GradientText } from '@/components/ui/gradient-text';
-import { getSkills } from '@/lib/content';
 
-// Get core skills from JSON content
-const skillsContent = getSkills();
-
-function AnimatedProgress({ value, color }: { value: number; color: string }) {
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(value), 200);
-    return () => clearTimeout(timer);
-  }, [value]);
-
-  return (
-    <div className="relative h-2 md:h-2.5 w-full overflow-hidden rounded-full bg-secondary">
-      <div
-        className={`h-full bg-gradient-to-r ${color} transition-all duration-1000 ease-out rounded-full`}
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  );
-}
+// Skill categories with icons - no arbitrary percentages
+const skillCategories = [
+  {
+    title: "Frontend",
+    icon: Code2,
+    gradient: "from-blue-500 to-cyan-500",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"]
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    gradient: "from-green-500 to-emerald-500",
+    skills: ["Node.js", "Python", "Express", "REST APIs", "GraphQL"]
+  },
+  {
+    title: "Database",
+    icon: Database,
+    gradient: "from-indigo-500 to-violet-500",
+    skills: ["PostgreSQL", "MongoDB", "Supabase", "Redis", "Prisma", "MySQL"]
+  },
+  {
+    title: "Mobile",
+    icon: Smartphone,
+    gradient: "from-purple-500 to-pink-500",
+    skills: ["Flutter", "Dart", "React Native", "App Store", "Play Store"]
+  },
+  {
+    title: "Design & Tools",
+    icon: Palette,
+    gradient: "from-orange-500 to-yellow-500",
+    skills: ["Figma", "UI/UX", "Git", "Docker", "AWS", "Vercel"]
+  }
+];
 
 export function Skills() {
   return (
@@ -62,19 +74,33 @@ export function Skills() {
           </div>
         </ScrollReveal>
 
-        {/* Core Skills Progress Section - from JSON */}
+        {/* Core Skills Cards - Clean categorized approach */}
         <ScrollReveal delay={100}>
-          <div className="max-w-4xl mx-auto mb-10 md:mb-16">
+          <div className="max-w-5xl mx-auto mb-10 md:mb-16">
             <h3 className="font-headline text-lg md:text-xl font-semibold mb-4 md:mb-8 text-center text-white">Core Technical Skills</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6">
-              {skillsContent.coreSkills.map((skill, index) => (
-                <ScrollReveal key={skill.name} delay={index * 50} direction="left">
-                  <div className="p-3 md:p-4 rounded-lg md:rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm hover:border-primary/50 hover:bg-white/15 transition-all duration-300 active:scale-[0.98]">
-                    <div className="flex justify-between items-center mb-1.5 md:mb-2">
-                      <span className="font-medium text-sm md:text-base text-white">{skill.name}</span>
-                      <span className="text-xs md:text-sm text-primary font-mono font-bold">{skill.level}%</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {skillCategories.map((category, index) => (
+                <ScrollReveal key={category.title} delay={index * 100} direction="up">
+                  <div className="group h-full p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-primary/50 hover:bg-white/10 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1">
+                    {/* Icon Header */}
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${category.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <category.icon className="h-6 w-6 text-white" />
                     </div>
-                    <AnimatedProgress value={skill.level} color={skill.color} />
+                    
+                    {/* Title */}
+                    <h4 className="font-headline text-lg font-semibold text-white mb-3">{category.title}</h4>
+                    
+                    {/* Skills as tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill) => (
+                        <span 
+                          key={skill}
+                          className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-stone-300 border border-white/5 hover:border-primary/30 hover:text-white transition-colors"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
