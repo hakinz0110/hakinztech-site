@@ -11,10 +11,14 @@ import {
   BarChart3, 
   Lock,
   Eye,
-  Code
+  Code,
+  Rocket,
+  Loader2,
+  CheckCircle2
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 
 const adminSections = [
   {
@@ -48,12 +52,49 @@ const adminSections = [
 ];
 
 export default function AdminDashboard() {
+  const { toast } = useToast();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [deploying, setDeploying] = useState(false);
+  const [deploySuccess, setDeploySuccess] = useState(false);
 
   // Simple password protection (you should change this!)
   const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'hakinz2024';
+  
+  // Vercel Deploy Hook URL - set this in your .env file
+  const DEPLOY_HOOK_URL = process.env.NEXT_PUBLIC_VERCEL_DEPLOY_HOOK || '';
+
+  const triggerDeploy = async () => {
+    if (!DEPLOY_HOOK_URL) {
+      toast({
+        title: "Deploy hook not configured",
+        description: "Add NEXT_PUBLIC_VERCEL_DEPLOY_HOOK to your environment variables.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setDeploying(true);
+    setDeploySuccess(false);
+    
+    try {
+      await fetch(DEPLOY_HOOK_URL, { method: 'POST' });
+      setDeploySuccess(true);
+      toast({
+        title: "Deploy triggered! 🚀",
+        description: "Your site will update in 1-2 minutes.",
+      });
+    } catch {
+      toast({
+        title: "Deploy failed",
+        description: "Could not trigger deployment. Check your deploy hook URL.",
+        variant: "destructive",
+      });
+    } finally {
+      setDeploying(false);
+    }
+  };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,6 +165,21 @@ export default function AdminDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            <Button 
+              onClick={triggerDeploy} 
+              disabled={deploying}
+              size="sm"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600"
+            >
+              {deploying ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : deploySuccess ? (
+                <CheckCircle2 className="mr-2 h-4 w-4" />
+              ) : (
+                <Rocket className="mr-2 h-4 w-4" />
+              )}
+              {deploying ? 'Deploying...' : deploySuccess ? 'Deployed!' : 'Deploy Changes'}
+            </Button>
             <Button asChild variant="outline" size="sm">
               <Link href="/" target="_blank">
                 <Eye className="mr-2 h-4 w-4" />
@@ -183,13 +239,30 @@ export default function AdminDashboard() {
           <CardContent className="p-6">
             <h3 className="font-semibold mb-2">💡 How it works</h3>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• Edit your content using the forms above</li>
-              <li>• Changes are saved to your GitHub repository</li>
-              <li>• Your site automatically rebuilds with new content</li>
-              <li>• Images are uploaded to your Supabase storage</li>
+              <li>• Edit your content using the sections above</li>
+              <li>• Click "Save" in each section to save changes</li>
+              <li>• Click the green "Deploy Changes" button to publish</li>
+              <li>• Your site will update in 1-2 minutes</li>
             </ul>
           </CardContent>
         </Card>
+
+        {/* Deploy Hook Setup */}
+        {!DEPLOY_HOOK_URL && (
+          <Card className="mt-4 bg-orange-500/10 border-orange-500/20">
+            <CardContent className="p-6">
+              <h3 className="font-semibold mb-2 text-orange-600">⚠️ Setup Required</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                To enable one-click deploys, add your Vercel Deploy Hook:
+              </p>
+              <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                <li>Go to Vercel → Project Settings → Git → Deploy Hooks</li>
+                <li>Create a new hook named "Admin Deploy"</li>
+                <li>Add <code className="bg-muted px-1 rounded">NEXT_PUBLIC_VERCEL_DEPLOY_HOOK=your_hook_url</code> to your environment</li>
+              </ol>
+            </CardContent>
+          </Card>
+        )}
       </main>
     </div>
   );

@@ -1,15 +1,14 @@
 "use client";
 
 import React from 'react';
-import { GraduationCap, Wrench, Lightbulb, Code2, Rocket, Users, Award, LucideIcon } from 'lucide-react';
+import { GraduationCap, Wrench, Lightbulb, LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { GradientText } from '@/components/ui/gradient-text';
-import { getAbout, getStats } from '@/lib/content';
+import { getAbout } from '@/lib/content';
 
 // Get content from JSON
 const about = getAbout();
-const statsData = getStats();
 
 // Icon mapping
 const iconMap: Record<string, LucideIcon> = {
@@ -17,13 +16,6 @@ const iconMap: Record<string, LucideIcon> = {
   Wrench,
   Lightbulb,
 };
-
-const stats = [
-  { value: statsData.yearsExperience, label: "Years Exp.", Icon: Award },
-  { value: statsData.projectsCompleted, label: "Projects", Icon: Rocket },
-  { value: statsData.happyClients, label: "Clients", Icon: Users },
-  { value: statsData.technologies, label: "Tech Stack", Icon: Code2 },
-];
 
 export function About() {
   return (
@@ -35,24 +27,6 @@ export function About() {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="container mx-auto max-w-7xl px-4 md:px-6 relative z-10">
-        {/* Stats Section - 2x2 grid on mobile */}
-        <ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 lg:gap-8 mb-12 md:mb-20">
-            {stats.map((stat) => (
-              <div 
-                key={stat.label}
-                className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-primary/20 shadow-lg shadow-primary/5 hover:shadow-xl hover:border-primary/40 transition-all duration-300 group active:scale-95"
-              >
-                <stat.Icon className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-2 md:mb-3 text-primary group-hover:scale-110 transition-transform" />
-                <div className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-                  <GradientText>{stat.value}</GradientText>
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <ScrollReveal direction="left">

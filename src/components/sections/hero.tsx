@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FallbackImage } from '@/components/ui/fallback-image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, Github, Linkedin, Twitter, Download, Sparkles, MapPin, Clock } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Twitter, Sparkles, MapPin, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { getProfile, getSocial } from '@/lib/content';
 
@@ -161,8 +161,8 @@ export function Hero() {
                   className="font-bold text-base h-14 px-8 rounded-xl border-2 border-primary/30 text-primary bg-white hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
                 >
                   <Link href="#contact">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download CV
+                    <Mail className="mr-2 h-5 w-5" />
+                    Get In Touch
                   </Link>
                 </Button>
               </div>

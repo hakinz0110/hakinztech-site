@@ -43,9 +43,9 @@ function ProjectPlaceholder({ category, title }: { category: string; title: stri
   
   return (
     <div className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${colorClass} border rounded-lg p-6 md:p-8 min-h-[200px] md:min-h-[300px]`}>
-      <Icon className="h-12 w-12 md:h-16 md:w-16 text-muted-foreground/50 mb-3 md:mb-4" />
-      <p className="text-muted-foreground/70 text-center font-medium text-sm md:text-base">{title}</p>
-      <Badge variant="outline" className="mt-2 text-xs">{category}</Badge>
+      <Icon className="h-12 w-12 md:h-16 md:w-16 text-foreground/40 mb-3 md:mb-4" />
+      <p className="text-foreground/70 text-center font-semibold text-sm md:text-base">{title}</p>
+      <Badge variant="outline" className="mt-2 text-xs font-medium">{category}</Badge>
     </div>
   );
 }
@@ -145,11 +145,11 @@ export function ProjectsSlider() {
                   <div className="p-5 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-center order-2 lg:order-1">
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                      <Badge className={`bg-gradient-to-r ${categoryColors[project.category] || ''} text-xs`}>
+                      <Badge className={`bg-gradient-to-r ${categoryColors[project.category] || ''} text-xs font-semibold`}>
                         {project.category}
                       </Badge>
                       {project.tags.slice(0, 2).map(tag => (
-                        <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
+                        <Badge key={tag} variant="secondary" className="text-xs font-medium">{tag}</Badge>
                       ))}
                       {project.tags.length > 2 && (
                         <Badge variant="outline" className="text-xs">+{project.tags.length - 2}</Badge>
@@ -162,7 +162,7 @@ export function ProjectsSlider() {
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-muted-foreground text-sm md:text-base lg:text-lg mb-4 md:mb-6 leading-relaxed line-clamp-3 md:line-clamp-none">
+                    <p className="text-foreground/80 text-sm md:text-base lg:text-lg mb-4 md:mb-6 leading-relaxed line-clamp-3 md:line-clamp-none">
                       {project.description}
                     </p>
 
