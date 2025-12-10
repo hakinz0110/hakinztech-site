@@ -82,7 +82,7 @@ export function Header() {
           ))}
           <div className="w-px h-6 bg-border mx-2" />
           <ThemeToggle />
-          <Button asChild size="sm" className="ml-2 font-semibold">
+          <Button asChild size="sm" className="ml-2 font-semibold gold-gradient text-white hover:opacity-90">
             <Link href="#contact">
               <Sparkles className="h-4 w-4 mr-1.5" />
               Hire Me
@@ -144,7 +144,7 @@ export function Header() {
                 <div className="p-4 border-t border-border/50 space-y-3">
                   <Button 
                     asChild 
-                    className="w-full font-semibold h-11" 
+                    className="w-full font-semibold h-11 gold-gradient text-white" 
                     onClick={() => setOpen(false)}
                   >
                     <Link href="#contact">
