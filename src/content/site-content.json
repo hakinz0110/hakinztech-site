@@ -9,7 +9,13 @@
     "responseTime": "Within 24 hours",
     "email": "hakinztech@gmail.com",
     "phone": "+2349138477491",
-    "images": [],
+    "images": [
+      {
+        "src": "/uploads/profile/1765821296265-hhxns0.png",
+        "fallback": "/uploads/profile/1765821296265-hhxns0.png",
+        "alt": "Hakinz_Tech - Professional Portrait"
+      }
+    ],
     "typingPhrases": [
       "Hi, I'm Hakinz_Tech 👋",
       "Software Engineer",
