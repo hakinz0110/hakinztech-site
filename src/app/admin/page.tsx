@@ -103,6 +103,7 @@ export default function AdminDashboard() {
       setError('');
       // Store in session
       sessionStorage.setItem('admin_auth', 'true');
+      sessionStorage.setItem('admin_password', password);
     } else {
       setError('Invalid password');
     }
@@ -191,6 +192,7 @@ export default function AdminDashboard() {
               size="sm"
               onClick={() => {
                 sessionStorage.removeItem('admin_auth');
+                sessionStorage.removeItem('admin_password');
                 setIsAuthenticated(false);
               }}
             >

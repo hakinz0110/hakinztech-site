@@ -61,11 +61,12 @@ export default function ProjectsEditor() {
   const handleSave = async () => {
     setSaving(true);
     try {
+      const password = sessionStorage.getItem('admin_password') || '';
       const response = await fetch('/api/admin/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'hakinz2024',
+          password,
           file: 'projects.json',
           content: { projects },
         }),
