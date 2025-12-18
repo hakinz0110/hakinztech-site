@@ -70,7 +70,7 @@
     "coreSkills": [
       {
         "name": "React / Next.js",
-        "level": 95,
+        "level": 80,
         "color": "from-blue-500 to-cyan-500"
       },
       {
@@ -80,7 +80,7 @@
       },
       {
         "name": "Node.js",
-        "level": 88,
+        "level": 55,
         "color": "from-green-500 to-emerald-500"
       },
       {
