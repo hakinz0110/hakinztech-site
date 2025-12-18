@@ -15,7 +15,13 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
     ],
+    // Allow local uploads to work properly
+    unoptimized: process.env.NODE_ENV === 'development',
   },
   // Fix for Genkit/Handlebars webpack issue
   webpack: (config, { isServer }) => {

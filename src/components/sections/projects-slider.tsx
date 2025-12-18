@@ -111,28 +111,34 @@ export function ProjectsSlider() {
               <Card className="overflow-hidden bg-card/50 border-border/50 backdrop-blur-sm shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-primary/30 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Project Image - First on mobile */}
-                  <div className="relative aspect-video lg:aspect-auto lg:min-h-[350px] order-1 lg:order-2 overflow-hidden bg-muted/30">
-                    {project.imageUrls && project.imageUrls.length > 0 ? (
-                      <Carousel className="w-full h-full">
-                        <CarouselContent className="h-full">
-                          {project.imageUrls.map((url, imgIndex) => (
-                            <CarouselItem key={imgIndex} className="h-full">
-                              <div className="relative w-full h-full min-h-[200px] md:min-h-[300px]">
+                  <div className="relative aspect-video lg:aspect-[4/3] order-1 lg:order-2 overflow-hidden bg-muted/20">
+                    {project.imageUrls && project.imageUrls.length > 0 && project.imageUrls[0] ? (
+                      <Carousel className="w-full h-full" opts={{ loop: true }}>
+                        <CarouselContent className="-ml-0">
+                          {project.imageUrls.filter(url => url && url.trim() !== '').map((url, imgIndex) => (
+                            <CarouselItem key={imgIndex} className="pl-0">
+                              <div className="relative aspect-video lg:aspect-[4/3]">
                                 <Image
                                   src={url}
                                   alt={`${project.title} - Image ${imgIndex + 1}`}
                                   fill
+                                  sizes="(max-width: 768px) 100vw, 50vw"
                                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                  data-ai-hint="technology project screenshot"
                                 />
                               </div>
                             </CarouselItem>
                           ))}
                         </CarouselContent>
-                        {project.imageUrls.length > 1 && (
+                        {project.imageUrls.filter(url => url && url.trim() !== '').length > 1 && (
                           <>
-                            <CarouselPrevious className="left-2 md:left-4 h-8 w-8 md:h-10 md:w-10" />
-                            <CarouselNext className="right-2 md:right-4 h-8 w-8 md:h-10 md:w-10" />
+                            <CarouselPrevious className="left-2 md:left-4 h-8 w-8 md:h-10 md:w-10 bg-white/80 hover:bg-white" />
+                            <CarouselNext className="right-2 md:right-4 h-8 w-8 md:h-10 md:w-10 bg-white/80 hover:bg-white" />
+                            {/* Image indicators */}
+                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                              {project.imageUrls.filter(url => url && url.trim() !== '').map((_, idx) => (
+                                <div key={idx} className="w-2 h-2 rounded-full bg-white/60" />
+                              ))}
+                            </div>
                           </>
                         )}
                       </Carousel>
