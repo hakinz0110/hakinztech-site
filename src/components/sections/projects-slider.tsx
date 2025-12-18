@@ -26,10 +26,17 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 const categoryColors: Record<string, string> = {
-  'Web': 'from-blue-500/20 to-cyan-500/20 border-blue-500/30',
-  'Mobile': 'from-purple-500/20 to-pink-500/20 border-purple-500/30',
-  'UI/UX': 'from-orange-500/20 to-yellow-500/20 border-orange-500/30',
-  'VA': 'from-green-500/20 to-emerald-500/20 border-green-500/30',
+  'Web': 'from-blue-500 to-cyan-500',
+  'Mobile': 'from-purple-500 to-pink-500',
+  'UI/UX': 'from-orange-500 to-amber-500',
+  'VA': 'from-green-500 to-emerald-500',
+};
+
+const categoryBgColors: Record<string, string> = {
+  'Web': 'from-blue-50 via-cyan-50 to-sky-50',
+  'Mobile': 'from-purple-50 via-pink-50 to-fuchsia-50',
+  'UI/UX': 'from-orange-50 via-amber-50 to-yellow-50',
+  'VA': 'from-green-50 via-emerald-50 to-teal-50',
 };
 
 const FILTERS = ['All', 'Web', 'Mobile', 'UI/UX', 'VA'];
@@ -39,13 +46,31 @@ const projects = getProjects();
 
 function ProjectPlaceholder({ category, title }: { category: string; title: string }) {
   const Icon = categoryIcons[category] || Folder;
-  const colorClass = categoryColors[category] || 'from-primary/20 to-accent/20 border-primary/30';
+  const gradientColor = categoryColors[category] || 'from-primary to-accent';
+  const bgColor = categoryBgColors[category] || 'from-amber-50 via-orange-50 to-yellow-50';
   
   return (
-    <div className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${colorClass} border rounded-lg p-6 md:p-8 min-h-[200px] md:min-h-[300px]`}>
-      <Icon className="h-12 w-12 md:h-16 md:w-16 text-foreground/40 mb-3 md:mb-4" />
-      <p className="text-foreground/70 text-center font-semibold text-sm md:text-base">{title}</p>
-      <Badge variant="outline" className="mt-2 text-xs font-medium">{category}</Badge>
+    <div className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${bgColor} relative overflow-hidden`}>
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/30 rounded-full translate-y-1/2 -translate-x-1/2" />
+      
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+        backgroundSize: '24px 24px'
+      }} />
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6">
+        <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${gradientColor} flex items-center justify-center shadow-lg mb-4`}>
+          <Icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
+        </div>
+        <h4 className="font-bold text-foreground/80 text-base md:text-lg mb-1 max-w-[200px]">{title}</h4>
+        <span className={`text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r ${gradientColor} text-white`}>
+          {category}
+        </span>
+      </div>
     </div>
   );
 }
@@ -151,7 +176,7 @@ export function ProjectsSlider() {
                   <div className="p-5 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-center order-2 lg:order-1">
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
-                      <Badge className={`bg-gradient-to-r ${categoryColors[project.category] || ''} text-xs font-semibold`}>
+                      <Badge className={`bg-gradient-to-r ${categoryColors[project.category] || 'from-primary to-accent'} text-white text-xs font-semibold border-0`}>
                         {project.category}
                       </Badge>
                       {project.tags.slice(0, 2).map(tag => (
