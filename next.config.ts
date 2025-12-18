@@ -29,6 +29,18 @@ const nextConfig: NextConfig = {
   },
   // Suppress the require.extensions warning
   serverExternalPackages: ['genkit', '@genkit-ai/googleai', 'handlebars', 'dotprompt'],
+  // Prevent aggressive caching for content updates
+  headers: async () => [
+    {
+      source: '/:path*',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=0, must-revalidate',
+        },
+      ],
+    },
+  ],
 };
 
 export default nextConfig;
