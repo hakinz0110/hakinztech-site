@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FallbackImage } from '@/components/ui/fallback-image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail, Github, Linkedin, Twitter, Sparkles, MapPin, Clock } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Twitter, MapPin, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { getProfile, getSocial } from '@/lib/content';
 
@@ -42,19 +42,7 @@ export function Hero() {
               {/* Background card for image */}
               <div className="absolute -inset-8 md:-inset-12 bg-white rounded-[3rem] shadow-2xl shadow-stone-900/10 border border-primary/10" />
               
-              {/* Floating stats cards */}
-              <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 z-20">
-                <div className="px-5 py-3 rounded-2xl bg-white shadow-xl border border-primary/10 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Experience</p>
-                    <p className="font-bold text-foreground">{profile.yearsExperience}</p>
-                  </div>
-                </div>
-              </div>
-              
+              {/* Available badge */}
               <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 z-20">
                 <div className="px-5 py-3 rounded-2xl bg-white shadow-xl border border-emerald-100 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center">

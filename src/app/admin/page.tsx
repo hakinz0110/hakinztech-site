@@ -59,8 +59,9 @@ export default function AdminDashboard() {
   const [deploying, setDeploying] = useState(false);
   const [deploySuccess, setDeploySuccess] = useState(false);
 
-  // Simple password protection (you should change this!)
-  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'hakinz2024';
+  // Admin password - set NEXT_PUBLIC_ADMIN_PASSWORD in Vercel environment variables
+  // Fallback passwords for flexibility
+  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || '01101996Ab';
   
   // Vercel Deploy Hook URL - set this in your .env file
   const DEPLOY_HOOK_URL = process.env.NEXT_PUBLIC_VERCEL_DEPLOY_HOOK || '';

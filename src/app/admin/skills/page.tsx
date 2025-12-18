@@ -13,7 +13,6 @@ import { useToast } from '@/hooks/use-toast';
 import siteContent from '@/content/site-content.json';
 
 type CoreSkill = typeof siteContent.skills.coreSkills[0];
-type Stats = typeof siteContent.stats;
 
 const GRADIENT_COLORS = [
   { label: 'Blue to Cyan', value: 'from-blue-500 to-cyan-500' },
@@ -28,7 +27,6 @@ export default function SkillsEditor() {
   const { toast } = useToast();
   const [saving, setSaving] = useState(false);
   const [skills, setSkills] = useState<CoreSkill[]>(siteContent.skills.coreSkills);
-  const [stats, setStats] = useState<Stats>(siteContent.stats);
   const [newSkillName, setNewSkillName] = useState('');
 
   // Check auth
@@ -43,7 +41,6 @@ export default function SkillsEditor() {
     try {
       const updatedContent = {
         ...siteContent,
-        stats,
         skills: { coreSkills: skills },
       };
       
@@ -109,8 +106,8 @@ export default function SkillsEditor() {
               </Link>
             </Button>
             <div>
-              <h1 className="font-headline font-bold text-lg">Skills & Stats</h1>
-              <p className="text-xs text-muted-foreground">Update your skills and statistics</p>
+              <h1 className="font-headline font-bold text-lg">Skills</h1>
+              <p className="text-xs text-muted-foreground">Update your technical skills</p>
             </div>
           </div>
           <Button onClick={handleSave} disabled={saving}>
@@ -122,50 +119,6 @@ export default function SkillsEditor() {
 
       {/* Main Content */}
       <main className="container mx-auto max-w-4xl px-4 py-8 space-y-6">
-        {/* Stats */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Statistics</CardTitle>
-            <CardDescription>Numbers displayed in the About section</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="space-y-2">
-                <Label>Years Experience</Label>
-                <Input
-                  value={stats.yearsExperience}
-                  onChange={(e) => setStats({ ...stats, yearsExperience: e.target.value })}
-                  placeholder="5+"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label>Projects Completed</Label>
-                <Input
-                  value={stats.projectsCompleted}
-                  onChange={(e) => setStats({ ...stats, projectsCompleted: e.target.value })}
-                  placeholder="50+"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label>Happy Clients</Label>
-                <Input
-                  value={stats.happyClients}
-                  onChange={(e) => setStats({ ...stats, happyClients: e.target.value })}
-                  placeholder="30+"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label>Technologies</Label>
-                <Input
-                  value={stats.technologies}
-                  onChange={(e) => setStats({ ...stats, technologies: e.target.value })}
-                  placeholder="10+"
-                />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Core Skills */}
         <Card>
           <CardHeader>
