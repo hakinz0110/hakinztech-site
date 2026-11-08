@@ -83,6 +83,21 @@
       ],
       "liveSiteUrl": "",
       "sourceCodeUrl": ""
+    },
+    {
+      "id": "ocfupy",
+      "slug": "ocfupy",
+      "title": "Ocfupy",
+      "category": "Mobile",
+      "description": "A property management app",
+      "longDescription": "To manage a property for a real estate agent ",
+      "imageUrls": [
+        "/uploads/projects/1794147515459-dmwwp1.jpg",
+        ""
+      ],
+      "tags": [],
+      "liveSiteUrl": "",
+      "sourceCodeUrl": ""
     }
   ]
 }
